@@ -13,6 +13,7 @@
 		F05FDD5129AB5B5B00FDD6DA /* ipabuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */; };
 		F05FDD5429AB697B00FDD6DA /* Application Support in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5329AB697B00FDD6DA /* Application Support */; };
 		F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstaller.swift */; };
+		F05FDD5829AB745B00FDD6DA /* SpecifyAppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5729AB745B00FDD6DA /* SpecifyAppContainer.swift */; };
 		F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034429AA00AC004D3DE8 /* Root.swift */; };
 		F0BC034729AA00AC004D3DE8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034629AA00AC004D3DE8 /* RootView.swift */; };
 		F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034829AA00AD004D3DE8 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ipabuild.sh; sourceTree = "<group>"; };
 		F05FDD5329AB697B00FDD6DA /* Application Support */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Application Support"; sourceTree = "<group>"; };
 		F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstaller.swift; sourceTree = "<group>"; };
+		F05FDD5729AB745B00FDD6DA /* SpecifyAppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecifyAppContainer.swift; sourceTree = "<group>"; };
 		F0BC034129AA00AC004D3DE8 /* StoreControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BC034429AA00AC004D3DE8 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		F0BC034629AA00AC004D3DE8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				F0BC034629AA00AC004D3DE8 /* RootView.swift */,
 				F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstaller.swift */,
+				F05FDD5729AB745B00FDD6DA /* SpecifyAppContainer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */,
 				F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstaller.swift in Sources */,
 				F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */,
+				F05FDD5829AB745B00FDD6DA /* SpecifyAppContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
