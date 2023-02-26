@@ -17,7 +17,7 @@ struct ContentView: View {
                     Text("Version \(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei")
                 }
                 Section {
-                    NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+                    NavigationLink(destination: DemoUpdateInstaller()) {
                         Text("Enable DemoLoop")
                     }
                 } footer: {
@@ -25,7 +25,7 @@ struct ContentView: View {
                 }
                 Button("Change DemoLoop Icon") {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                } .disabled(demoloopon == false)
+                }.disabled(demoloopon == false)
             } .navigationTitle("StoreControl")
         }
     }
