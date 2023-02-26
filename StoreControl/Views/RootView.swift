@@ -13,13 +13,17 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                Image("IconInApp")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100)
-                                .clipped()
-                Text("Version \(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei")
+                Section {
+                    Image("IconInApp")
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 130)
+                                    .clipped()
+                            Text("StoreControl")
+                                .font(.largeTitle.weight(.bold))
+                    Text("Version \(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei")
+                }
                 Section {
                     NavigationLink(destination: DemoUpdateInstaller()) {
                         Text("Enable DemoLoop")
@@ -30,7 +34,7 @@ struct ContentView: View {
                 Button("Change DemoLoop Icon") {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                 }.disabled(demoloopon == false)
-            } .navigationTitle("StoreControl")
+            }
         } .navigationViewStyle(StackNavigationViewStyle())
     }
 }

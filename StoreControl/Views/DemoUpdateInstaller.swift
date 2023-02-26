@@ -28,7 +28,7 @@ struct DemoUpdateInstaller: View {
                         .clipped()
                     Text("Make sure DemoLoop has been installed using a third-party sideloader (SideStore, Scarlet, ETC).")
                         .font(.subheadline.weight(.regular))
-                        .frame(width: 320)
+                        .frame(width: 340)
                         .clipped()
                         .multilineTextAlignment(.center)
                     Spacer()
@@ -36,7 +36,7 @@ struct DemoUpdateInstaller: View {
                         .clipped()
             Link(destination: URL(string: "https://demoupdate.apple.com/install/6.1.2/demoupdate.ipa")!) {
                 Text("Download IPA from Apple Servers")
-            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 330)
+            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 340)
             Spacer()
                 .frame(height: 20)
                 .clipped()
