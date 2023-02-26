@@ -35,7 +35,7 @@ struct DemoUpdateInstaller: View {
                         Spacer()
                             .frame(height: 40)
                             .clipped()
-                Link(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=URL@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/) {
+                Link(destination: URL(string: "https://demoupdate.apple.com/install/6.1.2/demoupdate.ipa")!) {
                     Text("Download IPA from Apple Servers")
                 } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 330)
                 Spacer()
