@@ -1,5 +1,5 @@
 //
-//  StoreControlApp.swift
+//  Root.swift
 //  StoreControl
 //
 //  Created by Tristan on 25/02/2023.
