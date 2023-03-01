@@ -62,10 +62,11 @@ struct DemoLoopSurgery: View {
                 print("Found folder: \(folderName)")
             self.progress = 0.3
             let appBundlePath = Bundle.main.bundlePath
-            print("App bundle path: \(appBundlePath)")
+            print("Application Support Source: \(appBundlePath)")
             self.progress = 0.5
             let originalPath = "\(appBundlePath)/Application Support"
-            let destinationPath = "/var/mobile/Containers/Data/Application/\(folderName)/Library/Application Support"
+            let destinationPath = "/private/var/mobile/Containers/Data/Application/\(folderName)/Library/Application Support"
+            print("Destination Path: \(destinationPath)")
             do {
                 if fileManager.fileExists(atPath: destinationPath) {
                     try fileManager.removeItem(atPath: destinationPath)

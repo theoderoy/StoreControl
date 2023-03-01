@@ -22,10 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F014F18E29AE858D00C2D632 /* StoreControlDebuggedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreControlDebuggedApp.swift; sourceTree = "<group>"; };
-		F014F19029AE858D00C2D632 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F014F19229AE859100C2D632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F014F19529AE859100C2D632 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F05FDD4729AB5B2600FDD6DA /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		F05FDD4829AB5B2600FDD6DA /* helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
 		F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vm_unaligned_copy_switch_race.c; sourceTree = "<group>"; };
@@ -56,25 +52,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F014F18D29AE858D00C2D632 /* StoreControlDebugged */ = {
-			isa = PBXGroup;
-			children = (
-				F014F18E29AE858D00C2D632 /* StoreControlDebuggedApp.swift */,
-				F014F19029AE858D00C2D632 /* ContentView.swift */,
-				F014F19229AE859100C2D632 /* Assets.xcassets */,
-				F014F19429AE859100C2D632 /* Preview Content */,
-			);
-			path = StoreControlDebugged;
-			sourceTree = "<group>";
-		};
-		F014F19429AE859100C2D632 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F014F19529AE859100C2D632 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		F05FDD5229AB668D00FDD6DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +65,6 @@
 			children = (
 				F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */,
 				F0BC034329AA00AC004D3DE8 /* StoreControl */,
-				F014F18D29AE858D00C2D632 /* StoreControlDebugged */,
 				F0BC034229AA00AC004D3DE8 /* Products */,
 			);
 			sourceTree = "<group>";
