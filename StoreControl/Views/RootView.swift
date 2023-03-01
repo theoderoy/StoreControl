@@ -10,6 +10,8 @@ import Foundation
 
 struct ContentView: View {
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    @StateObject var appState = AppState()
+    @State var showUnrestoreSuccess = false
     var body: some View {
         NavigationView {
             List {
@@ -28,14 +30,66 @@ struct ContentView: View {
                     NavigationLink(destination: DemoUpdateInstaller()) {
                         Text("Restore DemoLoop")
                     }
+                    Button("Unrestore DemoLoop") {
+                        SurgeryRemove()
+                    }.disabled(appState.demoloopon == false)
                 } footer: {
-                    Text("You will have to have approved the sandbox escape if this is the first time you're running StoreControl.")
+                    Text("You will have to have approved the sandbox escape if this is the first time you're running StoreControl.\nYou should only Unrestore DemoLoop if you're experiencing errors and/or issues. Selecting a new theme usually just overrides the previous.")
                 } .onAppear(perform: PrettyPlease)
                 Button("Change DemoLoop Icon") {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }.disabled(demoloopon == false)
+                }.disabled(appState.demoloopon == false)
             }
-        } .navigationViewStyle(StackNavigationViewStyle())
+        } .navigationViewStyle(StackNavigationViewStyle()) .sheet(isPresented: $showUnrestoreSuccess) {
+            surgeryRemoveSuccess()
+}
+    }
+    func SurgeryRemove() {
+        let fileManager = FileManager.default
+        if let folderName = searchForFolderName() {
+            print("Found folder: \(folderName)")
+            let appBundlePath = Bundle.main.bundlePath
+            print("Application Support Source: \(appBundlePath)")
+            let revokePath = "/private/var/mobile/Containers/Data/Application/\(folderName)/Library/Application Support"
+            print("Unrestore Path: \(revokePath)")
+            do {
+                if fileManager.fileExists(atPath: revokePath) {
+                    try fileManager.removeItem(atPath: revokePath)
+                    print("Existing folder removed successfully or was not found!")
+                } else {
+                    print("File does not exist at path \(revokePath)")
+                }
+            } catch {
+                print("Error removing file at path \(revokePath): \(error.localizedDescription)")
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                appState.demoloopon = false
+                appState.ButtonText = "Restore DemoLoop"
+                showUnrestoreSuccess = true
+            }
+        } else {
+            print("Could not find folder")
+            return
+        }
+    }
+    func searchForFolderName() -> String? {
+        let fileManager = FileManager.default
+        let appDirectory = "/private/var/mobile/Containers/Data/Application/"
+        do {
+            let folderNames = try fileManager.contentsOfDirectory(atPath: appDirectory)
+            for folderName in folderNames {
+                let metadataFilePath = appDirectory + folderName + "/.com.apple.mobile_container_manager.metadata.plist"
+                let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
+                let metadataPlist = try PropertyListSerialization.propertyList(from: metadataData, format: nil) as? [String: Any]
+                
+                if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "com.apple.ist.demoloop" {
+                    return folderName
+                }
+            }
+        } catch {
+            print("Error: \(error.localizedDescription)")
+        }
+        return nil
     }
 }
 
@@ -45,7 +99,9 @@ func PrettyPlease() {
                 print("Failed to escape sandbox")
             }
         }
+    
 }
+
 
 public struct ButtonFromInteractfulROFL: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
@@ -66,5 +122,36 @@ public struct ButtonFromInteractfulROFL: ButtonStyle {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct surgeryRemoveSuccess: View {
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        VStack {
+                    Image(systemName: "trash.square.fill")
+                        .imageScale(.medium)
+                        .font(.system(size: 150, weight: .regular, design: .default))
+                    Spacer()
+                        .frame(height: 41)
+                        .clipped()
+                    Text("Success!")
+                        .font(.largeTitle.weight(.bold))
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                        .frame(height: 20)
+                        .clipped()
+                    Text("DemoLoop has been successfully unpatched.")
+                        .font(.subheadline.weight(.regular))
+                        .frame(width: 320)
+                        .clipped()
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                        .frame(height: 20)
+                        .clipped()
+            Button("Dismiss") {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
     }
 }

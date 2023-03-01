@@ -10,7 +10,7 @@ import SwiftUI
 var SurgerySuccessful = false
 
 struct DemoLoopSurgeryAdd: View {
-    @AppStorage("buttonText") var ButtonText: String = "Restore DemoLoop"
+    @StateObject var appState = AppState()
     @State var EnablePerformButton = true
     @State var showSuccess = false
     var body: some View {
@@ -30,7 +30,7 @@ struct DemoLoopSurgeryAdd: View {
                 .frame(width: 340)
                 .clipped()
                 .multilineTextAlignment(.center)
-            Button("\(ButtonText)") {
+            Button("\(appState.ButtonText)") {
                 SurgeryAdd()
                 EnablePerformButton = false
             } .disabled(EnablePerformButton == false) .buttonStyle(ButtonFromInteractfulROFL()) .frame(width: 350)
@@ -61,12 +61,13 @@ struct DemoLoopSurgeryAdd: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 SurgerySuccessful = true
                 EnablePerformButton = true
-                ButtonText = "Reinstall Resources"
+                appState.ButtonText = "Reinstall Resources"
             }
         } else {
             print("Could not find folder")
             return
         }
+        appState.demoloopon = true
         showSuccess = true
     }
     func searchForFolderName() -> String? {
@@ -102,7 +103,6 @@ struct surgerySuccess: View {
         VStack {
                     Image(systemName: "app.badge.checkmark.fill")
                         .imageScale(.medium)
-                        .symbolRenderingMode(.multicolor)
                         .font(.system(size: 150, weight: .regular, design: .default))
                     Spacer()
                         .frame(height: 41)
