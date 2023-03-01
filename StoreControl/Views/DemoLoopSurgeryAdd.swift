@@ -9,28 +9,9 @@ import SwiftUI
 
 var SurgerySuccessful = false
 
-struct ProgressBar: View {
-    @Binding var progress: Double
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .leading) {
-                Rectangle()
-                    .foregroundColor(Color.gray.opacity(0.3))
-                    .frame(width: geometry.size.width, height: 10)
-                Rectangle()
-                    .foregroundColor(Color.blue)
-                    .frame(width: CGFloat(self.progress) * geometry.size.width, height: 10)
-                    .animation(.linear)
-            }
-            .cornerRadius(5)
-        }
-    }
-}
-
 struct DemoLoopSurgery: View {
     @AppStorage("buttonText") var ButtonText: String = "Restore DemoLoop"
     @State var EnablePerformButton = true
-    @State public var progress: Double = 0.0
     var body: some View {
         VStack(spacing: 25) {
             Image("SurgeryIndicatorIconInApp")
@@ -44,9 +25,7 @@ struct DemoLoopSurgery: View {
                 .multilineTextAlignment(.center)
                 .frame(width: 350)
             VStack(spacing: 10) {
-                Text("Starting Bundle ID search")
-                ProgressBar(progress: $progress)
-                                .frame(width: 300, height: 20)
+                Text("Start restoring DemoLoop")
             }
             Text("By clicking Enable DemoLoop, StoreControl will attempt to repair DemoLoop by restoring the neccesary resources it does not normally come with.")
                 .font(.subheadline.weight(.regular))
@@ -62,11 +41,9 @@ struct DemoLoopSurgery: View {
     func SurgeryAdd() {
         let fileManager = FileManager.default
         if let folderName = searchForFolderName() {
-                print("Found folder: \(folderName)")
-            self.progress = 0.3
+            print("Found folder: \(folderName)")
             let appBundlePath = Bundle.main.bundlePath
             print("Application Support Source: \(appBundlePath)")
-            self.progress = 0.5
             let originalPath = "\(appBundlePath)/Application Support"
             let destinationPath = "/private/var/mobile/Containers/Data/Application/\(folderName)/Library/Application Support"
             print("Destination Path: \(destinationPath)")
@@ -74,7 +51,6 @@ struct DemoLoopSurgery: View {
                 if fileManager.fileExists(atPath: destinationPath) {
                     try fileManager.removeItem(atPath: destinationPath)
                     print("Existing folder removed successfully or was not found!")
-                    self.progress = 0.8
                 }
                 try fileManager.copyItem(atPath: originalPath, toPath: destinationPath)
                 print("Folder copied successfully!")
@@ -82,26 +58,21 @@ struct DemoLoopSurgery: View {
                 print("Error copying folder: \(error.localizedDescription)")
                 return
             }
-            self.progress = 1.0
-            } else {
-                print("Could not find folder")
-                return
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                SurgerySuccessful = true
+                EnablePerformButton = true
+                ButtonText = "Reinstall Resources"
             }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            SurgerySuccessful = true
-            EnablePerformButton = true
-            ButtonText = "Reinstall Resources"
-            self.progress = 0.0
+        } else {
+            print("Could not find folder")
+            return
         }
     }
     func searchForFolderName() -> String? {
         let fileManager = FileManager.default
-        
         let appDirectory = "/private/var/mobile/Containers/Data/Application/"
-        
         do {
             let folderNames = try fileManager.contentsOfDirectory(atPath: appDirectory)
-            
             for folderName in folderNames {
                 let metadataFilePath = appDirectory + folderName + "/.com.apple.mobile_container_manager.metadata.plist"
                 let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
@@ -114,7 +85,6 @@ struct DemoLoopSurgery: View {
         } catch {
             print("Error: \(error.localizedDescription)")
         }
-        
         return nil
     }
 }
