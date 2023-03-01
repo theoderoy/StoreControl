@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct SpecifyAppContainer: View {
-    @AppStorage("DemoLoop Container ID") private var demoloopcontainerid = ("")
+    @State private var demoloopcontainerid: String = ""
     var body: some View {
         VStack(spacing: 25) {
             Image("ContainerIDIconInApp")
@@ -32,7 +33,7 @@ struct SpecifyAppContainer: View {
                 .multilineTextAlignment(.center)
             TextField("Folder Name", text: $demoloopcontainerid)
             .textFieldStyle(.roundedBorder) .frame(width: 340)
-            NavigationLink(destination: SpecifyAppContainer()) {
+            NavigationLink(destination: DemoLoopSurgery()) {
                 Text("Continue")
             }
         }

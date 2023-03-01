@@ -13,7 +13,8 @@
 		F05FDD5129AB5B5B00FDD6DA /* ipabuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */; };
 		F05FDD5429AB697B00FDD6DA /* Application Support in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5329AB697B00FDD6DA /* Application Support */; };
 		F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstaller.swift */; };
-		F05FDD5829AB745B00FDD6DA /* SpecifyAppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5729AB745B00FDD6DA /* SpecifyAppContainer.swift */; };
+		F05FDD5A29AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */; };
+		F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5B29ABC13300FDD6DA /* Constants.swift */; };
 		F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034429AA00AC004D3DE8 /* Root.swift */; };
 		F0BC034729AA00AC004D3DE8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034629AA00AC004D3DE8 /* RootView.swift */; };
 		F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034829AA00AD004D3DE8 /* Assets.xcassets */; };
@@ -21,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F014F18E29AE858D00C2D632 /* StoreControlDebuggedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreControlDebuggedApp.swift; sourceTree = "<group>"; };
+		F014F19029AE858D00C2D632 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F014F19229AE859100C2D632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F014F19529AE859100C2D632 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F05FDD4729AB5B2600FDD6DA /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		F05FDD4829AB5B2600FDD6DA /* helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
 		F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vm_unaligned_copy_switch_race.c; sourceTree = "<group>"; };
@@ -30,7 +35,8 @@
 		F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ipabuild.sh; sourceTree = "<group>"; };
 		F05FDD5329AB697B00FDD6DA /* Application Support */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Application Support"; sourceTree = "<group>"; };
 		F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstaller.swift; sourceTree = "<group>"; };
-		F05FDD5729AB745B00FDD6DA /* SpecifyAppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecifyAppContainer.swift; sourceTree = "<group>"; };
+		F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLoopSurgeryAdd.swift; sourceTree = "<group>"; };
+		F05FDD5B29ABC13300FDD6DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F0BC034129AA00AC004D3DE8 /* StoreControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BC034429AA00AC004D3DE8 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		F0BC034629AA00AC004D3DE8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -50,6 +56,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F014F18D29AE858D00C2D632 /* StoreControlDebugged */ = {
+			isa = PBXGroup;
+			children = (
+				F014F18E29AE858D00C2D632 /* StoreControlDebuggedApp.swift */,
+				F014F19029AE858D00C2D632 /* ContentView.swift */,
+				F014F19229AE859100C2D632 /* Assets.xcassets */,
+				F014F19429AE859100C2D632 /* Preview Content */,
+			);
+			path = StoreControlDebugged;
+			sourceTree = "<group>";
+		};
+		F014F19429AE859100C2D632 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F014F19529AE859100C2D632 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		F05FDD5229AB668D00FDD6DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +88,7 @@
 			children = (
 				F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */,
 				F0BC034329AA00AC004D3DE8 /* StoreControl */,
+				F014F18D29AE858D00C2D632 /* StoreControlDebugged */,
 				F0BC034229AA00AC004D3DE8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				F0BC034429AA00AC004D3DE8 /* Root.swift */,
+				F05FDD5B29ABC13300FDD6DA /* Constants.swift */,
 				F0BC035229AA0114004D3DE8 /* MDC */,
 				F05FDD5229AB668D00FDD6DA /* Resources */,
 				F0BC035D29AA0176004D3DE8 /* Views */,
@@ -115,7 +142,7 @@
 			children = (
 				F0BC034629AA00AC004D3DE8 /* RootView.swift */,
 				F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstaller.swift */,
-				F05FDD5729AB745B00FDD6DA /* SpecifyAppContainer.swift */,
+				F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,13 +220,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05FDD5A29AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift in Sources */,
 				F0BC034729AA00AC004D3DE8 /* RootView.swift in Sources */,
 				F05FDD4D29AB5B2600FDD6DA /* helpers.m in Sources */,
 				F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */,
 				F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */,
 				F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstaller.swift in Sources */,
 				F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */,
-				F05FDD5829AB745B00FDD6DA /* SpecifyAppContainer.swift in Sources */,
+				F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,15 +357,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StoreControl/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J6BD6Z3Y7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape the sandbox to perform surgery on the DemoLoop app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -366,15 +396,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StoreControl/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J6BD6Z3Y7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape the sandbox to perform surgery on the DemoLoop app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

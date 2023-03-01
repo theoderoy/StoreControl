@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ContentView: View {
-    @AppStorage("DemoLoop Enabled?") private var demoloopon = false
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     var body: some View {
         NavigationView {
@@ -26,11 +26,11 @@ struct ContentView: View {
                 }
                 Section {
                     NavigationLink(destination: DemoUpdateInstaller()) {
-                        Text("Enable DemoLoop")
+                        Text("Restore DemoLoop")
                     }
                 } footer: {
-                    Text("You might need to approve the sandbox escape if this is the first time you're running StoreControl.")
-                }
+                    Text("You will have to have approved the sandbox escape if this is the first time you're running StoreControl.")
+                } .onAppear(perform: PrettyPlease)
                 Button("Change DemoLoop Icon") {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                 }.disabled(demoloopon == false)
@@ -38,6 +38,30 @@ struct ContentView: View {
         } .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
+func PrettyPlease() {
+    grant_full_disk_access() { error in
+            if (error != nil) {
+                print("Failed to escape sandbox")
+            }
+        }
+}
+
+public struct ButtonFromInteractfulROFL: ButtonStyle {
+    public func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .font(Font.body.weight(.medium))
+            .padding(.vertical, 12)
+            .foregroundColor(Color.white)
+            .frame(maxWidth: .infinity)
+            .background(
+                RoundedRectangle(cornerRadius: 14.0, style: .continuous)
+                    .fill(Color.accentColor)
+            )
+            .opacity(configuration.isPressed ? 0.4 : 1.0)
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

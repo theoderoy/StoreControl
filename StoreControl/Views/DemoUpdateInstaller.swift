@@ -20,45 +20,30 @@ struct DemoUpdateInstaller: View {
                     Spacer()
                         .frame(height: 41)
                         .clipped()
-                    Text("DemoLoop")
+                    Text("Installing DemoLoop")
                         .font(.largeTitle.weight(.bold))
                         .multilineTextAlignment(.center)
                     Spacer()
                         .frame(height: 20)
                         .clipped()
-                    Text("Make sure DemoLoop has been installed using a third-party sideloader (SideStore, Scarlet, ETC).")
+                    Text("Download the IPA directly from Apple's DemoUpdate server and install the IPA using a third-party sideloader tool (SideStore, Scarlet).\n\nMake sure it is correctly installed, then click Continue.")
                         .font(.subheadline.weight(.regular))
                         .frame(width: 340)
                         .clipped()
                         .multilineTextAlignment(.center)
-                    Spacer()
-                        .frame(height: 40)
-                        .clipped()
+            Spacer()
+                .frame(height: 25)
+                .clipped()
             Link(destination: URL(string: "https://demoupdate.apple.com/install/6.1.2/demoupdate.ipa")!) {
-                Text("Download IPA from Apple Servers")
-            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 340)
+                Text("Download from Apple Server")
+            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 350)
             Spacer()
                 .frame(height: 20)
                 .clipped()
-            NavigationLink(destination: SpecifyAppContainer()) {
+            NavigationLink(destination: DemoLoopSurgery()) {
                 Text("Continue")
             }
             }
-    }
-}
-
-public struct ButtonFromInteractfulROFL: ButtonStyle {
-    public func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .font(Font.body.weight(.medium))
-            .padding(.vertical, 12)
-            .foregroundColor(Color.white)
-            .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 14.0, style: .continuous)
-                    .fill(Color.accentColor)
-            )
-            .opacity(configuration.isPressed ? 0.4 : 1.0)
     }
 }
 
