@@ -40,7 +40,7 @@ struct DemoUpdateInstaller: View {
             Spacer()
                 .frame(height: 20)
                 .clipped()
-            NavigationLink(destination: DemoLoopSurgery()) {
+            NavigationLink(destination: DemoLoopSurgeryAdd()) {
                 Text("Continue")
             }
             }

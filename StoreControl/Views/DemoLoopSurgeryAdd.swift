@@ -1,5 +1,5 @@
 //
-//  DemoLoopSurgeryAdd.swift
+//  DemoLoopSurgeryAddAdd.swift
 //  StoreControl
 //
 //  Created by Tristan on 26/02/2023.
@@ -9,9 +9,10 @@ import SwiftUI
 
 var SurgerySuccessful = false
 
-struct DemoLoopSurgery: View {
+struct DemoLoopSurgeryAdd: View {
     @AppStorage("buttonText") var ButtonText: String = "Restore DemoLoop"
     @State var EnablePerformButton = true
+    @State var showSuccess = false
     var body: some View {
         VStack(spacing: 25) {
             Image("SurgeryIndicatorIconInApp")
@@ -24,10 +25,7 @@ struct DemoLoopSurgery: View {
                 .font(.largeTitle.weight(.bold))
                 .multilineTextAlignment(.center)
                 .frame(width: 350)
-            VStack(spacing: 10) {
-                Text("Start restoring DemoLoop")
-            }
-            Text("By clicking Enable DemoLoop, StoreControl will attempt to repair DemoLoop by restoring the neccesary resources it does not normally come with.")
+            Text("StoreControl will attempt to repair DemoLoop by restoring the neccesary resources it does not normally come with.")
                 .font(.subheadline.weight(.regular))
                 .frame(width: 340)
                 .clipped()
@@ -36,6 +34,8 @@ struct DemoLoopSurgery: View {
                 SurgeryAdd()
                 EnablePerformButton = false
             } .disabled(EnablePerformButton == false) .buttonStyle(ButtonFromInteractfulROFL()) .frame(width: 350)
+        } .sheet(isPresented: $showSuccess) {
+            surgerySuccess()
         }
     }
     func SurgeryAdd() {
@@ -67,6 +67,7 @@ struct DemoLoopSurgery: View {
             print("Could not find folder")
             return
         }
+        showSuccess = true
     }
     func searchForFolderName() -> String? {
         let fileManager = FileManager.default
@@ -89,8 +90,40 @@ struct DemoLoopSurgery: View {
     }
 }
 
-struct DemoLoopSurgery_Previews: PreviewProvider {
+struct DemoLoopSurgeryAdd_Previews: PreviewProvider {
     static var previews: some View {
-        DemoLoopSurgery()
+        DemoLoopSurgeryAdd()
+    }
+}
+
+struct surgerySuccess: View {
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        VStack {
+                    Image(systemName: "app.badge.checkmark.fill")
+                        .imageScale(.medium)
+                        .symbolRenderingMode(.multicolor)
+                        .font(.system(size: 150, weight: .regular, design: .default))
+                    Spacer()
+                        .frame(height: 41)
+                        .clipped()
+                    Text("Success!")
+                        .font(.largeTitle.weight(.bold))
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                        .frame(height: 20)
+                        .clipped()
+                    Text("DemoLoop has been successfully patched using the selected theme.\n\nA respring or reboot should allow DemoLoop to open after 1 minute of device inactivity.")
+                        .font(.subheadline.weight(.regular))
+                        .frame(width: 320)
+                        .clipped()
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                        .frame(height: 20)
+                        .clipped()
+            Button("Dismiss") {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
     }
 }
