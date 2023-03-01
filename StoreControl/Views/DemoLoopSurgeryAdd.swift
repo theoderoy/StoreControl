@@ -54,7 +54,7 @@ struct DemoLoopSurgery: View {
                 .clipped()
                 .multilineTextAlignment(.center)
             Button("\(ButtonText)") {
-                searchForBundleID(in: "/private/var/mobile/Containers/Data/Application")
+                SurgeryAdd()
                 EnablePerformButton = false
             } .disabled(EnablePerformButton == false) .buttonStyle(ButtonFromInteractfulROFL()) .frame(width: 350)
         }
@@ -107,7 +107,7 @@ struct DemoLoopSurgery: View {
                 let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
                 let metadataPlist = try PropertyListSerialization.propertyList(from: metadataData, format: nil) as? [String: Any]
                 
-                if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "" {
+                if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "com.apple.ist.demoloop" {
                     return folderName
                 }
             }
@@ -116,36 +116,6 @@ struct DemoLoopSurgery: View {
         }
         
         return nil
-    }
-    func searchForBundleID(in directory: String) {
-        do {
-            let fileManager = FileManager.default
-            let contents = try fileManager.contentsOfDirectory(atPath: directory)
-            for content in contents {
-                let fullPath = directory + "/" + content
-                print("Searching in directory: \(fullPath)")
-                var isDir: ObjCBool = false
-                if fileManager.fileExists(atPath: fullPath, isDirectory: &isDir) {
-                    if isDir.boolValue {
-                        // Recursively search subdirectories
-                        searchForBundleID(in: fullPath)
-                    } else {
-                        // Look for Info.plist files
-                        if content == "Info.plist" {
-                            if let infoDict = NSDictionary(contentsOfFile: fullPath) as? [String: Any],
-                                let bundleID = infoDict["CFBundleIdentifier"] as? String,
-                                let appName = infoDict["CFBundleName"] as? String,
-                                appName == "DemoLoop" {
-                                print("Found DemoLoop app with Bundle ID: \(bundleID)")
-                                EnablePerformButton = true
-                            }
-                        }
-                    }
-                }
-            }
-        } catch {
-            print("Error: \(error.localizedDescription)")
-        }
     }
 }
 
