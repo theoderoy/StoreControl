@@ -1,8 +1,6 @@
 name: Remote Building StoreControl
 
-on:
-  push:
-    branches: [ "gh-actions" ]
+on: workflow_dispatch
 
 jobs:
   build:
