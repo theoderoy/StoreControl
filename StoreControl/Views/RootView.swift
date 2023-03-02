@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-struct ContentView: View {
+struct RootView: View {
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     @StateObject var appState = AppState()
     @State var showUnrestoreSuccess = false
@@ -36,9 +36,18 @@ struct ContentView: View {
                 } footer: {
                     Text("You will have to have approved the sandbox escape if this is the first time you're running StoreControl.\nYou should only Unrestore DemoLoop if you're experiencing errors and/or issues. Selecting a new theme usually just overrides the previous.")
                 } .onAppear(perform: PrettyPlease)
-                Button("Change DemoLoop Icon") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }.disabled(appState.demoloopon == false)
+                Section {
+                    Button("Change DemoLoop Icon") {
+                        
+                    }.disabled(appState.demoloopon == false)
+                    Button("Toggle In-App Log View") {
+                        if consoleManager.isVisible == false {
+                            consoleManager.isVisible = true
+                        } else {
+                            consoleManager.isVisible = false
+                        }
+                    }
+                }
             }
         } .navigationViewStyle(StackNavigationViewStyle()) .sheet(isPresented: $showUnrestoreSuccess) {
             surgeryRemoveSuccess()
@@ -47,20 +56,20 @@ struct ContentView: View {
     func SurgeryRemove() {
         let fileManager = FileManager.default
         if let folderName = searchForFolderName() {
-            print("Found folder: \(folderName)")
+            consoleManager.print("Found folder: \(folderName)")
             let appBundlePath = Bundle.main.bundlePath
-            print("Application Support Source: \(appBundlePath)")
+            consoleManager.print("Application Support Source: \(appBundlePath)")
             let revokePath = "/private/var/mobile/Containers/Data/Application/\(folderName)/Library/Application Support"
-            print("Unrestore Path: \(revokePath)")
+            consoleManager.print("Unrestore Path: \(revokePath)")
             do {
                 if fileManager.fileExists(atPath: revokePath) {
                     try fileManager.removeItem(atPath: revokePath)
-                    print("Existing folder removed successfully or was not found!")
+                    consoleManager.print("Existing folder removed successfully or was not found!")
                 } else {
-                    print("File does not exist at path \(revokePath)")
+                    consoleManager.print("File does not exist at path \(revokePath)")
                 }
             } catch {
-                print("Error removing file at path \(revokePath): \(error.localizedDescription)")
+                consoleManager.print("Error removing file at path \(revokePath): \(error.localizedDescription)")
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 appState.demoloopon = false
@@ -68,7 +77,7 @@ struct ContentView: View {
                 showUnrestoreSuccess = true
             }
         } else {
-            print("Could not find folder")
+            consoleManager.print("Could not find folder")
             return
         }
     }
@@ -87,7 +96,7 @@ struct ContentView: View {
                 }
             }
         } catch {
-            print("Error: \(error.localizedDescription)")
+            consoleManager.print("Error: \(error.localizedDescription)")
         }
         return nil
     }
@@ -96,7 +105,7 @@ struct ContentView: View {
 func PrettyPlease() {
     grant_full_disk_access() { error in
             if (error != nil) {
-                print("Failed to escape sandbox")
+                consoleManager.print("Failed to escape sandbox")
             }
         }
     
@@ -119,9 +128,9 @@ public struct ButtonFromInteractfulROFL: ButtonStyle {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RootView()
     }
 }
 

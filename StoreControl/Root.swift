@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import LocalConsole
+
+let consoleManager = LCManager.shared
 
 @main
 struct StoreControlApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }

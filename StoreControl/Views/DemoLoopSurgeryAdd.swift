@@ -41,21 +41,21 @@ struct DemoLoopSurgeryAdd: View {
     func SurgeryAdd() {
         let fileManager = FileManager.default
         if let folderName = searchForFolderName() {
-            print("Found folder: \(folderName)")
+            consoleManager.print("Found folder: \(folderName)")
             let appBundlePath = Bundle.main.bundlePath
-            print("Application Support Source: \(appBundlePath)")
+            consoleManager.print("Application Support Source: \(appBundlePath)")
             let originalPath = "\(appBundlePath)/Application Support"
             let destinationPath = "/private/var/mobile/Containers/Data/Application/\(folderName)/Library/Application Support"
-            print("Destination Path: \(destinationPath)")
+            consoleManager.print("Destination Path: \(destinationPath)")
             do {
                 if fileManager.fileExists(atPath: destinationPath) {
                     try fileManager.removeItem(atPath: destinationPath)
-                    print("Existing folder removed successfully or was not found!")
+                    consoleManager.print("Existing folder removed successfully or was not found!")
                 }
                 try fileManager.copyItem(atPath: originalPath, toPath: destinationPath)
-                print("Folder copied successfully!")
+                consoleManager.print("Folder copied successfully!")
             } catch {
-                print("Error copying folder: \(error.localizedDescription)")
+                consoleManager.print("Error copying folder: \(error.localizedDescription)")
                 return
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -64,7 +64,7 @@ struct DemoLoopSurgeryAdd: View {
                 appState.ButtonText = "Reinstall Resources"
             }
         } else {
-            print("Could not find folder")
+            consoleManager.print("Could not find folder")
             return
         }
         appState.demoloopon = true
@@ -85,7 +85,7 @@ struct DemoLoopSurgeryAdd: View {
                 }
             }
         } catch {
-            print("Error: \(error.localizedDescription)")
+            consoleManager.print("Error: \(error.localizedDescription)")
         }
         return nil
     }

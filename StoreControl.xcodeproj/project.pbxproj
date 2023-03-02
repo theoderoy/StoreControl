@@ -19,6 +19,7 @@
 		F0BC034729AA00AC004D3DE8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034629AA00AC004D3DE8 /* RootView.swift */; };
 		F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034829AA00AD004D3DE8 /* Assets.xcassets */; };
 		F0BC034C29AA00AD004D3DE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034B29AA00AD004D3DE8 /* Preview Assets.xcassets */; };
+		F0D088EA29B131EB00A26AF5 /* LocalConsole in Frameworks */ = {isa = PBXBuildFile; productRef = F0D088E929B131EB00A26AF5 /* LocalConsole */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D088EA29B131EB00A26AF5 /* LocalConsole in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +141,9 @@
 			dependencies = (
 			);
 			name = StoreControl;
+			packageProductDependencies = (
+				F0D088E929B131EB00A26AF5 /* LocalConsole */,
+			);
 			productName = StoreControl;
 			productReference = F0BC034129AA00AC004D3DE8 /* StoreControl.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +173,9 @@
 				Base,
 			);
 			mainGroup = F0BC033829AA00AB004D3DE8;
+			packageReferences = (
+				F0D088E829B131EB00A26AF5 /* XCRemoteSwiftPackageReference "LocalConsole" */,
+			);
 			productRefGroup = F0BC034229AA00AC004D3DE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -423,6 +431,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F0D088E829B131EB00A26AF5 /* XCRemoteSwiftPackageReference "LocalConsole" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/duraidabdul/LocalConsole/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F0D088E929B131EB00A26AF5 /* LocalConsole */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0D088E829B131EB00A26AF5 /* XCRemoteSwiftPackageReference "LocalConsole" */;
+			productName = LocalConsole;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F0BC033929AA00AB004D3DE8 /* Project object */;
 }
