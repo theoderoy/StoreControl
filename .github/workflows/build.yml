@@ -1,0 +1,20 @@
+name: Remote Building StoreControl
+
+on:
+  push:
+    branches: [ "gh-actions" ]
+
+jobs:
+  build:
+
+    runs-on: macos-11
+
+    steps:
+    - uses: actions/checkout@v3
+      
+    - name: Make IPA
+      run: ./ipabuild.sh
+    - uses: actions/upload-artifact@v3
+      with:
+       name: IPA Download
+       path: build/StoreControl.ipa
