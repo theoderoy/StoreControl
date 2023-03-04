@@ -21,6 +21,7 @@ struct DemoUpdateInstallerStep2: View {
             Text("Installing DemoLoop")
                 .font(.largeTitle.weight(.bold))
                 .multilineTextAlignment(.center)
+                .frame(width: 350)
             Text("You can install the DemoLoop app with iTunes directly using the Apple Partner Demo Profile.")
                 .font(.subheadline.weight(.regular))
                 .frame(width: 340)
@@ -28,8 +29,7 @@ struct DemoUpdateInstallerStep2: View {
                 .multilineTextAlignment(.center)
             Link(destination: URL(string: "itms-services://?action=download-manifest&url=https://demoupdate.apple.com/install/6.1.2/demoupdate.plist")!) {
                 Text("Download Demo Update")
-                    .buttonStyle(ButtonFromInteractfulROFL())
-            }
+            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 350)
             NavigationLink(destination: DemoLoopSurgeryAdd()) {
                 Text("Continue")
             }

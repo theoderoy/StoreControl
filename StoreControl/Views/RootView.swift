@@ -25,7 +25,7 @@ struct RootView: View {
                                     .clipped()
                             Text("StoreControl")
                                 .font(.largeTitle.weight(.bold))
-                    Text("Version v\(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei | Initial patch method by iBaDev")
+                    Text("Version v\(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei - Initial patch method by iBaDev")
                 }
                 Section {
                     NavigationLink(destination: DemoUpdateInstallerStep1()) {
@@ -105,7 +105,7 @@ struct RootView: View {
         if appState.demoloopon == false {
             restoreText = ("Restore DemoLoop")
         } else {
-            restoreText = ("Change Theme")
+            restoreText = ("Change Theme or Rerestore DemoLoop")
         }
     }
 }
@@ -154,6 +154,7 @@ struct surgeryRemoveSuccess: View {
                     Text("Unrestore Successful!")
                         .font(.largeTitle.weight(.bold))
                         .multilineTextAlignment(.center)
+                        .frame(width: 350)
                     Spacer()
                         .frame(height: 20)
                         .clipped()

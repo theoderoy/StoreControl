@@ -26,23 +26,42 @@ struct DemoUpdateInstallerStep1: View {
             Text("Provisioning \(deviceName)")
                 .font(.largeTitle.weight(.bold))
                 .multilineTextAlignment(.center)
+                .frame(width: 350)
             Text("In order to install DemoLoop authentically, you will need to install the Apple Partner Demo Profile.\n\nIf you are planning to sideload DemoLoop using a third-party service, skip this process. You will need to specify It's App ID later on.")
                 .font(.subheadline.weight(.regular))
                 .frame(width: 340)
                 .clipped()
                 .multilineTextAlignment(.center)
             Button("Installation Instructions") {
-                
-            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 350)
+                isPresented = true
+            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 350) .sheet(isPresented: $isPresented) {
+                WebView(url: "https://github.com/Swifticul/StoreControl/blob/main/Documentation/provisioning.md#requirements")
+            }
             NavigationLink(destination: DemoUpdateInstallerStep2()) {
-                    Text("Skip & Continue")
-                }
+                Text("Skip & Continue")
             }
         }
     }
-
-struct DemoUpdateInstallerStep1_Previews: PreviewProvider {
-    static var previews: some View {
-        DemoUpdateInstallerStep1()
+    
+    struct WebView: UIViewRepresentable {
+        let url: String
+        
+        func makeUIView(context: Context) -> WKWebView {
+            let webView = WKWebView()
+            if let url = URL(string: self.url) {
+                let request = URLRequest(url: url)
+                webView.load(request)
+            }
+            return webView
+        }
+        
+        func updateUIView(_ uiView: WKWebView, context: Context) {
+        }
+    }
+    
+    struct DemoUpdateInstallerStep1_Previews: PreviewProvider {
+        static var previews: some View {
+            DemoUpdateInstallerStep1()
+        }
     }
 }

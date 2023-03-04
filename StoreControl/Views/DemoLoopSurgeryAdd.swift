@@ -110,6 +110,7 @@ struct surgerySuccess: View {
                     Text("Patching Successful!")
                         .font(.largeTitle.weight(.bold))
                         .multilineTextAlignment(.center)
+                        .frame(width: 350)
                     Spacer()
                         .frame(height: 20)
                         .clipped()
