@@ -28,5 +28,5 @@ On Windows, make sure all of the correct dependencies have been installed that i
 - If prompted, select the Settings icon with the name "Profiles" as the target.
 - You should restart your iOS device to make sure the profile is registered.
 
-### Installing the DemoLoop app
+## Installing the DemoLoop app
 Now that the Apple Partner Demo Profile was installed, you can install DemoLoop using StoreControl or by going to https://demoupdate.apple.com.
