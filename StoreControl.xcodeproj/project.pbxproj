@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F01C987929B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C987829B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift */; };
+		F01C988429B37049001D6E06 /* Profiles in Resources */ = {isa = PBXBuildFile; fileRef = F01C988329B37049001D6E06 /* Profiles */; };
 		F05FDD4D29AB5B2600FDD6DA /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4829AB5B2600FDD6DA /* helpers.m */; };
 		F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */; };
 		F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */; };
 		F05FDD5129AB5B5B00FDD6DA /* ipabuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */; };
 		F05FDD5429AB697B00FDD6DA /* Application Support in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5329AB697B00FDD6DA /* Application Support */; };
-		F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstaller.swift */; };
+		F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift */; };
 		F05FDD5A29AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */; };
 		F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5B29ABC13300FDD6DA /* Constants.swift */; };
 		F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034429AA00AC004D3DE8 /* Root.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F01C987829B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep1.swift; sourceTree = "<group>"; };
+		F01C988329B37049001D6E06 /* Profiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Profiles; sourceTree = "<group>"; };
 		F05FDD4729AB5B2600FDD6DA /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		F05FDD4829AB5B2600FDD6DA /* helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
 		F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vm_unaligned_copy_switch_race.c; sourceTree = "<group>"; };
@@ -31,7 +35,7 @@
 		F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = grant_full_disk_access.m; sourceTree = "<group>"; };
 		F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ipabuild.sh; sourceTree = "<group>"; };
 		F05FDD5329AB697B00FDD6DA /* Application Support */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Application Support"; sourceTree = "<group>"; };
-		F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstaller.swift; sourceTree = "<group>"; };
+		F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep2.swift; sourceTree = "<group>"; };
 		F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLoopSurgeryAdd.swift; sourceTree = "<group>"; };
 		F05FDD5B29ABC13300FDD6DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F0BC034129AA00AC004D3DE8 /* StoreControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +58,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F01C988229B3701D001D6E06 /* Downloads */ = {
+			isa = PBXGroup;
+			children = (
+				F01C988329B37049001D6E06 /* Profiles */,
+			);
+			path = Downloads;
+			sourceTree = "<group>";
+		};
+		F01C988529B370C7001D6E06 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
 		F05FDD5229AB668D00FDD6DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +84,8 @@
 		F0BC033829AA00AB004D3DE8 = {
 			isa = PBXGroup;
 			children = (
+				F01C988529B370C7001D6E06 /* Documentation */,
+				F01C988229B3701D001D6E06 /* Downloads */,
 				F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */,
 				F0BC034329AA00AC004D3DE8 /* StoreControl */,
 				F0BC034229AA00AC004D3DE8 /* Products */,
@@ -119,7 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				F0BC034629AA00AC004D3DE8 /* RootView.swift */,
-				F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstaller.swift */,
+				F01C987829B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift */,
+				F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift */,
 				F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */,
 			);
 			path = Views;
@@ -190,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F01C988429B37049001D6E06 /* Profiles in Resources */,
 				F05FDD5429AB697B00FDD6DA /* Application Support in Resources */,
 				F0BC034C29AA00AD004D3DE8 /* Preview Assets.xcassets in Resources */,
 				F05FDD5129AB5B5B00FDD6DA /* ipabuild.sh in Resources */,
@@ -209,8 +232,9 @@
 				F05FDD4D29AB5B2600FDD6DA /* helpers.m in Sources */,
 				F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */,
 				F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */,
-				F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstaller.swift in Sources */,
+				F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift in Sources */,
 				F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */,
+				F01C987929B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift in Sources */,
 				F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

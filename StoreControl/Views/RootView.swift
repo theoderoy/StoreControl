@@ -25,10 +25,10 @@ struct RootView: View {
                                     .clipped()
                             Text("StoreControl")
                                 .font(.largeTitle.weight(.bold))
-                    Text("Version v\(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei")
+                    Text("Version v\(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei | Initial patch method by iBaDev")
                 }
                 Section {
-                    NavigationLink(destination: DemoUpdateInstaller()) {
+                    NavigationLink(destination: DemoUpdateInstallerStep1()) {
                         Text("\(restoreText)")
                     } .onAppear(perform: ChangeRestoreText)
                     Button("Unrestore DemoLoop") {
@@ -53,6 +53,7 @@ struct RootView: View {
             surgeryRemoveSuccess()
 }
     }
+    
     func SurgeryRemove() {
         let fileManager = FileManager.default
         if let folderName = searchForFolderName() {
@@ -117,7 +118,6 @@ func PrettyPlease() {
         }
     
 }
-
 
 public struct ButtonFromInteractfulROFL: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
