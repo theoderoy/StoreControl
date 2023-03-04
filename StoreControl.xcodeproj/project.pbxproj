@@ -88,9 +88,9 @@
 		F0BC033829AA00AB004D3DE8 = {
 			isa = PBXGroup;
 			children = (
+				F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */,
 				F01C988529B370C7001D6E06 /* Documentation */,
 				F01C988229B3701D001D6E06 /* Downloads */,
-				F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */,
 				F0BC034329AA00AC004D3DE8 /* StoreControl */,
 				F0BC034229AA00AC004D3DE8 /* Products */,
 			);
