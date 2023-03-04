@@ -105,7 +105,7 @@ struct RootView: View {
         if appState.demoloopon == false {
             restoreText = ("Restore DemoLoop")
         } else {
-            restoreText = ("Change Theme or Rerestore DemoLoop")
+            restoreText = ("Change Theme or Reinstall")
         }
     }
 }

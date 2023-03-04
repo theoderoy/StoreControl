@@ -30,7 +30,7 @@ struct DemoUpdateInstallerStep2: View {
             Link(destination: URL(string: "itms-services://?action=download-manifest&url=https://demoupdate.apple.com/install/6.1.2/demoupdate.plist")!) {
                 Text("Download Demo Update")
             } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 350)
-            NavigationLink(destination: DemoLoopSurgeryAdd()) {
+            NavigationLink(destination: ThemeSelectorUI()) {
                 Text("Continue")
             }
         }

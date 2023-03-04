@@ -10,6 +10,7 @@ import SwiftUI
 var SurgerySuccessful = false
 
 struct DemoLoopSurgeryAdd: View {
+    @Environment(\.presentationMode) private var presentationMode
     @StateObject var appState = AppState()
     @State var EnablePerformButton = true
     @State var showSuccess = false
@@ -25,7 +26,7 @@ struct DemoLoopSurgeryAdd: View {
                 .font(.largeTitle.weight(.bold))
                 .multilineTextAlignment(.center)
                 .frame(width: 350)
-            Text("StoreControl will attempt to repair DemoLoop by restoring the neccesary resources it does not normally come with.")
+            Text("StoreControl will try to restore DemoLoop and apply the selected \(appState.selectedtheme) theme.\n\n You can override this theme with a new one without having to unrestore. Unrestoring is only useful for removing a faulty theme and for other issues.")
                 .font(.subheadline.weight(.regular))
                 .frame(width: 340)
                 .clipped()
@@ -43,8 +44,8 @@ struct DemoLoopSurgeryAdd: View {
         if let folderName = searchForFolderName() {
             consoleManager.print("Found folder: \(folderName)")
             let appBundlePath = Bundle.main.bundlePath
-            consoleManager.print("Application Support Source: \(appBundlePath)")
-            let originalPath = "\(appBundlePath)/Application Support"
+            consoleManager.print("Application Support Source: \(appBundlePath)/Themes/\(appState.selectedtheme)")
+            let originalPath = "\(appBundlePath)/Themes/\(appState.selectedtheme)/Application Support"
             let destinationPath = "/private/var/mobile/Containers/Data/Application/\(folderName)/Library/Application Support"
             consoleManager.print("Destination Path: \(destinationPath)")
             do {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 class AppState: ObservableObject {
-    @AppStorage("demoloopon") var demoloopon: Bool = false
+    @AppStorage("demoloop on") var demoloopon: Bool = false
     @AppStorage("button text") var ButtonText: String = ("Restore DemoLoop")
+    @AppStorage("selected theme") var selectedtheme: String = ("Pommes")
 }
-var selectedtheme = ("null")

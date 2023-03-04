@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		F01C987929B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C987829B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift */; };
 		F01C988429B37049001D6E06 /* Profiles in Resources */ = {isa = PBXBuildFile; fileRef = F01C988329B37049001D6E06 /* Profiles */; };
+		F04D5B8D29B387D100CAF926 /* ThemeSelectorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D5B8C29B387D100CAF926 /* ThemeSelectorUI.swift */; };
+		F04D5B8F29B3883C00CAF926 /* Themes in Resources */ = {isa = PBXBuildFile; fileRef = F04D5B8E29B3883C00CAF926 /* Themes */; };
 		F05FDD4D29AB5B2600FDD6DA /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4829AB5B2600FDD6DA /* helpers.m */; };
 		F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */; };
 		F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */; };
 		F05FDD5129AB5B5B00FDD6DA /* ipabuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */; };
-		F05FDD5429AB697B00FDD6DA /* Application Support in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5329AB697B00FDD6DA /* Application Support */; };
 		F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift */; };
 		F05FDD5A29AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */; };
 		F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5B29ABC13300FDD6DA /* Constants.swift */; };
@@ -28,6 +29,8 @@
 		F01C987829B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep1.swift; sourceTree = "<group>"; };
 		F01C988329B37049001D6E06 /* Profiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Profiles; sourceTree = "<group>"; };
 		F01C988629B37C74001D6E06 /* provisioning.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = provisioning.md; sourceTree = "<group>"; };
+		F04D5B8C29B387D100CAF926 /* ThemeSelectorUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectorUI.swift; sourceTree = "<group>"; };
+		F04D5B8E29B3883C00CAF926 /* Themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Themes; sourceTree = "<group>"; };
 		F05FDD4729AB5B2600FDD6DA /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		F05FDD4829AB5B2600FDD6DA /* helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
 		F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vm_unaligned_copy_switch_race.c; sourceTree = "<group>"; };
@@ -35,7 +38,6 @@
 		F05FDD4B29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
 		F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = grant_full_disk_access.m; sourceTree = "<group>"; };
 		F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ipabuild.sh; sourceTree = "<group>"; };
-		F05FDD5329AB697B00FDD6DA /* Application Support */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Application Support"; sourceTree = "<group>"; };
 		F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep2.swift; sourceTree = "<group>"; };
 		F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLoopSurgeryAdd.swift; sourceTree = "<group>"; };
 		F05FDD5B29ABC13300FDD6DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 		F05FDD5229AB668D00FDD6DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F05FDD5329AB697B00FDD6DA /* Application Support */,
+				F04D5B8E29B3883C00CAF926 /* Themes */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -144,6 +146,7 @@
 				F0BC034629AA00AC004D3DE8 /* RootView.swift */,
 				F01C987829B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift */,
 				F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift */,
+				F04D5B8C29B387D100CAF926 /* ThemeSelectorUI.swift */,
 				F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */,
 			);
 			path = Views;
@@ -214,8 +217,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04D5B8F29B3883C00CAF926 /* Themes in Resources */,
 				F01C988429B37049001D6E06 /* Profiles in Resources */,
-				F05FDD5429AB697B00FDD6DA /* Application Support in Resources */,
 				F0BC034C29AA00AD004D3DE8 /* Preview Assets.xcassets in Resources */,
 				F05FDD5129AB5B5B00FDD6DA /* ipabuild.sh in Resources */,
 				F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */,
@@ -235,6 +238,7 @@
 				F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */,
 				F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */,
 				F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift in Sources */,
+				F04D5B8D29B387D100CAF926 /* ThemeSelectorUI.swift in Sources */,
 				F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */,
 				F01C987929B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift in Sources */,
 				F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */,
@@ -378,7 +382,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -417,7 +421,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
