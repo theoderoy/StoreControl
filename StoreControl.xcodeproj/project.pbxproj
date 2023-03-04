@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		F01C987829B35CA8001D6E06 /* DemoUpdateInstallerStep1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep1.swift; sourceTree = "<group>"; };
 		F01C988329B37049001D6E06 /* Profiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Profiles; sourceTree = "<group>"; };
+		F01C988629B37C74001D6E06 /* provisioning.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = provisioning.md; sourceTree = "<group>"; };
 		F05FDD4729AB5B2600FDD6DA /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		F05FDD4829AB5B2600FDD6DA /* helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
 		F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vm_unaligned_copy_switch_race.c; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		F01C988529B370C7001D6E06 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				F01C988629B37C74001D6E06 /* provisioning.md */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";

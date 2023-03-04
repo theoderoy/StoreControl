@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import WebKit
 
 struct DemoUpdateInstallerStep2: View {
     @State private var isPresented = false
@@ -27,26 +26,14 @@ struct DemoUpdateInstallerStep2: View {
                 .frame(width: 340)
                 .clipped()
                 .multilineTextAlignment(.center)
-            Button("Show DemoUpdate") {
-                        isPresented = true
-                    } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 350) .sheet(isPresented: $isPresented) {
-                        WebView(url: URL(string: "https://demoupdate.apple.com")!)
-                    }
+            Link(destination: URL(string: "itms-services://?action=download-manifest&url=https://demoupdate.apple.com/install/6.1.2/demoupdate.plist")!) {
+                Text("Download Demo Update")
+                    .buttonStyle(ButtonFromInteractfulROFL())
+            }
             NavigationLink(destination: DemoLoopSurgeryAdd()) {
                 Text("Continue")
             }
         }
-    }
-}
-
-struct WebView: UIViewRepresentable {
-    let url: URL
-    func makeUIView(context: Context) -> WKWebView {
-        return WKWebView()
-    }
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        let request = URLRequest(url: url)
-        uiView.load(request)
     }
 }
 
