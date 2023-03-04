@@ -11,6 +11,7 @@ import Foundation
 struct RootView: View {
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     @StateObject var appState = AppState()
+    @State var restoreText = ("Restore DemoLoop")
     @State var showUnrestoreSuccess = false
     var body: some View {
         NavigationView {
@@ -24,29 +25,28 @@ struct RootView: View {
                                     .clipped()
                             Text("StoreControl")
                                 .font(.largeTitle.weight(.bold))
-                    Text("Version \(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei")
+                    Text("Version v\(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei")
                 }
                 Section {
                     NavigationLink(destination: DemoUpdateInstaller()) {
-                        Text("Restore DemoLoop")
-                    }
+                        Text("\(restoreText)")
+                    } .onAppear(perform: ChangeRestoreText)
                     Button("Unrestore DemoLoop") {
                         SurgeryRemove()
                     }.disabled(appState.demoloopon == false)
                 } footer: {
-                    Text("You will have to have approved the sandbox escape if this is the first time you're running StoreControl.\nYou should only Unrestore DemoLoop if you're experiencing errors and/or issues. Selecting a new theme usually just overrides the previous.")
+                    Text("You will have to have approved the sandbox escape if this is the first time you're running StoreControl.\nYou should only unrestore DemoLoop if you're experiencing errors and/or issues. Selecting a new theme usually just overrides the previous.")
                 } .onAppear(perform: PrettyPlease)
                 Section {
-                    Button("Change DemoLoop Icon") {
-                        
-                    }.disabled(appState.demoloopon == false)
-                    Button("Toggle In-App Log View") {
+                    Button("Toggle Console View") {
                         if consoleManager.isVisible == false {
                             consoleManager.isVisible = true
                         } else {
                             consoleManager.isVisible = false
                         }
                     }
+                } footer: {
+                    Text("LocalConsole by duraidabdul")
                 }
             }
         } .navigationViewStyle(StackNavigationViewStyle()) .sheet(isPresented: $showUnrestoreSuccess) {
@@ -100,6 +100,13 @@ struct RootView: View {
         }
         return nil
     }
+    func ChangeRestoreText() {
+        if appState.demoloopon == false {
+            restoreText = ("Restore DemoLoop")
+        } else {
+            restoreText = ("Change Theme")
+        }
+    }
 }
 
 func PrettyPlease() {
@@ -144,7 +151,7 @@ struct surgeryRemoveSuccess: View {
                     Spacer()
                         .frame(height: 41)
                         .clipped()
-                    Text("Success!")
+                    Text("Unrestore Successful!")
                         .font(.largeTitle.weight(.bold))
                         .multilineTextAlignment(.center)
                     Spacer()
@@ -158,9 +165,12 @@ struct surgeryRemoveSuccess: View {
                     Spacer()
                         .frame(height: 20)
                         .clipped()
-            Button("Dismiss") {
+            Button("Dismiss and Restart") {
                         self.presentationMode.wrappedValue.dismiss()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    restartApp()
+                }
                     }
                 }
+        }
     }
-}

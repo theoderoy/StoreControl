@@ -58,17 +58,17 @@ struct DemoLoopSurgeryAdd: View {
                 consoleManager.print("Error copying folder: \(error.localizedDescription)")
                 return
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                SurgerySuccessful = true
-                EnablePerformButton = true
-                appState.ButtonText = "Reinstall Resources"
-            }
         } else {
             consoleManager.print("Could not find folder")
             return
         }
-        appState.demoloopon = true
-        showSuccess = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            SurgerySuccessful = true
+            EnablePerformButton = true
+            appState.ButtonText = "Reinstall Resources"
+            appState.demoloopon = true
+            showSuccess = true
+        }
     }
     func searchForFolderName() -> String? {
         let fileManager = FileManager.default
@@ -107,13 +107,13 @@ struct surgerySuccess: View {
                     Spacer()
                         .frame(height: 41)
                         .clipped()
-                    Text("Success!")
+                    Text("Patching Successful!")
                         .font(.largeTitle.weight(.bold))
                         .multilineTextAlignment(.center)
                     Spacer()
                         .frame(height: 20)
                         .clipped()
-                    Text("DemoLoop has been successfully patched using the selected theme.\n\nA respring or reboot should allow DemoLoop to open after 1 minute of device inactivity.")
+                    Text("DemoLoop has been successfully patched using the selected theme.\n\nRestart StoreControl to unlock new options.")
                         .font(.subheadline.weight(.regular))
                         .frame(width: 320)
                         .clipped()
@@ -121,9 +121,22 @@ struct surgerySuccess: View {
                     Spacer()
                         .frame(height: 20)
                         .clipped()
-            Button("Dismiss") {
+            Button("Dismiss and Restart") {
                         self.presentationMode.wrappedValue.dismiss()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    restartApp()
+                }
                     }
                 }
     }
 }
+
+func restartApp() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: RootView())
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            exit(0)
+        }
+    }
