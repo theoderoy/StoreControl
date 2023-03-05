@@ -72,73 +72,83 @@ struct DemoLoopSurgeryAdd: View {
         }
     }
     func searchForFolderName() -> String? {
-        let fileManager = FileManager.default
-        let appDirectory = "/private/var/mobile/Containers/Data/Application/"
-        do {
-            let folderNames = try fileManager.contentsOfDirectory(atPath: appDirectory)
-            for folderName in folderNames {
-                let metadataFilePath = appDirectory + folderName + "/.com.apple.mobile_container_manager.metadata.plist"
-                let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
-                let metadataPlist = try PropertyListSerialization.propertyList(from: metadataData, format: nil) as? [String: Any]
-                
-                if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "com.apple.ist.demoloop" {
-                    return folderName
-                }
-            }
-        } catch {
-            consoleManager.print("Error: \(error.localizedDescription)")
-        }
-        return nil
-    }
-}
-
-struct DemoLoopSurgeryAdd_Previews: PreviewProvider {
-    static var previews: some View {
-        DemoLoopSurgeryAdd()
-    }
-}
-
-struct surgerySuccess: View {
-    @Environment(\.presentationMode) var presentationMode
-    var body: some View {
-        VStack {
-                    Image(systemName: "app.badge.checkmark.fill")
-                        .imageScale(.medium)
-                        .font(.system(size: 150, weight: .regular, design: .default))
-                    Spacer()
-                        .frame(height: 41)
-                        .clipped()
-                    Text("Patching Successful!")
-                        .font(.largeTitle.weight(.bold))
-                        .multilineTextAlignment(.center)
-                        .frame(width: 350)
-                    Spacer()
-                        .frame(height: 20)
-                        .clipped()
-                    Text("DemoLoop has been successfully patched using the selected theme.\n\nRestart StoreControl to unlock new options.")
-                        .font(.subheadline.weight(.regular))
-                        .frame(width: 320)
-                        .clipped()
-                        .multilineTextAlignment(.center)
-                    Spacer()
-                        .frame(height: 20)
-                        .clipped()
-            Button("Dismiss and Restart") {
-                        self.presentationMode.wrappedValue.dismiss()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    restartApp()
-                }
+        if appState.customappid == true {
+            let fileManager = FileManager.default
+            let appDirectory = "/private/var/mobile/Containers/Data/Application/"
+            do {
+                let folderNames = try fileManager.contentsOfDirectory(atPath: appDirectory)
+                for folderName in folderNames {
+                    let metadataFilePath = appDirectory + folderName + "/.com.apple.mobile_container_manager.metadata.plist"
+                    let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
+                    let metadataPlist = try PropertyListSerialization.propertyList(from: metadataData, format: nil) as? [String: Any]
+                    
+                    if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "\(appState.appidstring)" {
+                        return folderName
                     }
                 }
+            } catch {
+                consoleManager.print("Error: \(error.localizedDescription)")
+            }
+            return nil
+        } else {
+            let fileManager = FileManager.default
+            let appDirectory = "/private/var/mobile/Containers/Data/Application/"
+            do {
+                let folderNames = try fileManager.contentsOfDirectory(atPath: appDirectory)
+                for folderName in folderNames {
+                    let metadataFilePath = appDirectory + folderName + "/.com.apple.mobile_container_manager.metadata.plist"
+                    let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
+                    let metadataPlist = try PropertyListSerialization.propertyList(from: metadataData, format: nil) as? [String: Any]
+                    
+                    if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "com.apple.ist.demoloop" {
+                        return folderName
+                    }
+                }
+            } catch {
+                consoleManager.print("Error: \(error.localizedDescription)")
+            }
+            return nil
+        }
+    }
+    
+    struct DemoLoopSurgeryAdd_Previews: PreviewProvider {
+        static var previews: some View {
+            DemoLoopSurgeryAdd()
+        }
+    }
+    
+    struct surgerySuccess: View {
+        @Environment(\.presentationMode) var presentationMode
+        var body: some View {
+            VStack {
+                Image(systemName: "app.badge.checkmark.fill")
+                    .imageScale(.medium)
+                    .font(.system(size: 150, weight: .regular, design: .default))
+                Spacer()
+                    .frame(height: 41)
+                    .clipped()
+                Text("Patching Successful!")
+                    .font(.largeTitle.weight(.bold))
+                    .multilineTextAlignment(.center)
+                    .frame(width: 350)
+                Spacer()
+                    .frame(height: 20)
+                    .clipped()
+                Text("DemoLoop has been successfully patched using the selected theme.\n\nRestart StoreControl to unlock new options.")
+                    .font(.subheadline.weight(.regular))
+                    .frame(width: 320)
+                    .clipped()
+                    .multilineTextAlignment(.center)
+                Spacer()
+                    .frame(height: 20)
+                    .clipped()
+                Button("Dismiss and Restart") {
+                    self.presentationMode.wrappedValue.dismiss()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        exit(0)
+                    }
+                }
+            }
+        }
     }
 }
-
-func restartApp() {
-        if let window = UIApplication.shared.windows.first {
-            window.rootViewController = UIHostingController(rootView: RootView())
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            exit(0)
-        }
-    }

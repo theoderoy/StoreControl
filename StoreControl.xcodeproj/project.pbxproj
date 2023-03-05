@@ -18,6 +18,7 @@
 		F05FDD5629AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift */; };
 		F05FDD5A29AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */; };
 		F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5B29ABC13300FDD6DA /* Constants.swift */; };
+		F09E3E3429B4B83C003AB870 /* ExperimentsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09E3E3329B4B83C003AB870 /* ExperimentsInterface.swift */; };
 		F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034429AA00AC004D3DE8 /* Root.swift */; };
 		F0BC034729AA00AC004D3DE8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034629AA00AC004D3DE8 /* RootView.swift */; };
 		F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034829AA00AD004D3DE8 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep2.swift; sourceTree = "<group>"; };
 		F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoLoopSurgeryAdd.swift; sourceTree = "<group>"; };
 		F05FDD5B29ABC13300FDD6DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F09E3E3329B4B83C003AB870 /* ExperimentsInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentsInterface.swift; sourceTree = "<group>"; };
 		F0BC034129AA00AC004D3DE8 /* StoreControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BC034429AA00AC004D3DE8 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		F0BC034629AA00AC004D3DE8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				F05FDD5529AB6BDC00FDD6DA /* DemoUpdateInstallerStep2.swift */,
 				F04D5B8C29B387D100CAF926 /* ThemeSelectorUI.swift */,
 				F05FDD5929AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift */,
+				F09E3E3329B4B83C003AB870 /* ExperimentsInterface.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				F05FDD5A29AB961E00FDD6DA /* DemoLoopSurgeryAdd.swift in Sources */,
 				F0BC034729AA00AC004D3DE8 /* RootView.swift in Sources */,
+				F09E3E3429B4B83C003AB870 /* ExperimentsInterface.swift in Sources */,
 				F05FDD4D29AB5B2600FDD6DA /* helpers.m in Sources */,
 				F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */,
 				F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */,

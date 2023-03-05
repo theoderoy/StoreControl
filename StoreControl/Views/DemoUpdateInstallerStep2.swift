@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DemoUpdateInstallerStep2: View {
+    @StateObject var appState = AppState()
     @State private var isPresented = false
     var body: some View {
         VStack(spacing: 25) {
@@ -29,7 +30,7 @@ struct DemoUpdateInstallerStep2: View {
                 .multilineTextAlignment(.center)
             Link(destination: URL(string: "itms-services://?action=download-manifest&url=https://demoupdate.apple.com/install/6.1.2/demoupdate.plist")!) {
                 Text("Download Demo Update")
-            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 350)
+            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 350) .disabled(appState.customappid == true)
             NavigationLink(destination: ThemeSelectorUI()) {
                 Text("Continue")
             }

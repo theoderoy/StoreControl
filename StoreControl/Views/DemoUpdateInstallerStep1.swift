@@ -27,7 +27,7 @@ struct DemoUpdateInstallerStep1: View {
                 .font(.largeTitle.weight(.bold))
                 .multilineTextAlignment(.center)
                 .frame(width: 350)
-            Text("In order to install DemoLoop authentically, you will need to install the Apple Partner Demo Profile.\n\nIf you are planning to sideload DemoLoop using a third-party service, skip this process. You will need to specify It's App ID later on.")
+            Text("In order to install DemoLoop authentically, you will need to install the Apple Partner Demo Profile.")
                 .font(.subheadline.weight(.regular))
                 .frame(width: 340)
                 .clipped()

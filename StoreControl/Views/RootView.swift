@@ -28,7 +28,13 @@ struct RootView: View {
                     Text("Version v\(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei - Initial patch method by iBaDev")
                 }
                 Section {
-                    NavigationLink(destination: DemoUpdateInstallerStep1()) {
+                    NavigationLink(destination: Group {
+                        if appState.demoloopon {
+                            ThemeSelectorUI()
+                        } else {
+                            DemoUpdateInstallerStep1()
+                        }
+                    }) {
                         Text("\(restoreText)")
                     } .onAppear(perform: ChangeRestoreText)
                     Button("Unrestore DemoLoop") {
@@ -44,6 +50,9 @@ struct RootView: View {
                         } else {
                             consoleManager.isVisible = false
                         }
+                    }
+                    NavigationLink(destination: ExperimentsInterface()) {
+                        Text("Experimental Features")
                     }
                 } footer: {
                     Text("LocalConsole by duraidabdul")
@@ -83,23 +92,43 @@ struct RootView: View {
         }
     }
     func searchForFolderName() -> String? {
-        let fileManager = FileManager.default
-        let appDirectory = "/private/var/mobile/Containers/Data/Application/"
-        do {
-            let folderNames = try fileManager.contentsOfDirectory(atPath: appDirectory)
-            for folderName in folderNames {
-                let metadataFilePath = appDirectory + folderName + "/.com.apple.mobile_container_manager.metadata.plist"
-                let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
-                let metadataPlist = try PropertyListSerialization.propertyList(from: metadataData, format: nil) as? [String: Any]
-                
-                if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "com.apple.ist.demoloop" {
-                    return folderName
+        if appState.customappid == true {
+            let fileManager = FileManager.default
+            let appDirectory = "/private/var/mobile/Containers/Data/Application/"
+            do {
+                let folderNames = try fileManager.contentsOfDirectory(atPath: appDirectory)
+                for folderName in folderNames {
+                    let metadataFilePath = appDirectory + folderName + "/.com.apple.mobile_container_manager.metadata.plist"
+                    let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
+                    let metadataPlist = try PropertyListSerialization.propertyList(from: metadataData, format: nil) as? [String: Any]
+                    
+                    if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "\(appState.appidstring)" {
+                        return folderName
+                    }
                 }
+            } catch {
+                consoleManager.print("Error: \(error.localizedDescription)")
             }
-        } catch {
-            consoleManager.print("Error: \(error.localizedDescription)")
+            return nil
+        } else {
+            let fileManager = FileManager.default
+            let appDirectory = "/private/var/mobile/Containers/Data/Application/"
+            do {
+                let folderNames = try fileManager.contentsOfDirectory(atPath: appDirectory)
+                for folderName in folderNames {
+                    let metadataFilePath = appDirectory + folderName + "/.com.apple.mobile_container_manager.metadata.plist"
+                    let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
+                    let metadataPlist = try PropertyListSerialization.propertyList(from: metadataData, format: nil) as? [String: Any]
+                    
+                    if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "com.apple.ist.demoloop" {
+                        return folderName
+                    }
+                }
+            } catch {
+                consoleManager.print("Error: \(error.localizedDescription)")
+            }
+            return nil
         }
-        return nil
     }
     func ChangeRestoreText() {
         if appState.demoloopon == false {
@@ -167,9 +196,9 @@ struct surgeryRemoveSuccess: View {
                         .frame(height: 20)
                         .clipped()
             Button("Dismiss and Restart") {
-                        self.presentationMode.wrappedValue.dismiss()
+                self.presentationMode.wrappedValue.dismiss()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    restartApp()
+                    exit(0)
                 }
                     }
                 }
