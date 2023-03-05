@@ -1,2 +1,25 @@
-# StoreControl
-MacDirtyCow app for iOS 14.0 - 16.1.2 that performs surgery on the DemoLoop application to make it function like your device is a genuine Demo booth device (WORK IN PROGRESS).
+<p align="center">
+  <img src='https://raw.githubusercontent.com/Swifticul/StoreControl/main/Documentation/Images/F64A45F8-CFDF-425A-B9EF-CDAA520D2F35.png' width="100">
+</p>
+<h1 align="center">StoreControl (beta)</h1>
+<p align="center">Enable the Screen Saver experience from Apple Demo devices in stores on your home devices! (from iOS 15.0 up to iOS 16.1.2 with MacDirtyCow)</p>
+&nbsp;
+<p align="center">
+<img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/home.png' width="250">
+<img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/saver.png' width="250">
+<img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/themes.png' width="250">
+</p>
+&nbsp;
+
+> __StoreControl is currently work-in-progress.__
+
+## Features
+- 🪂 Different selectable themes created by Apple or the community (I encourage submitting your own custom themes with pull-requests for in future updates)!
+- 🛠️ Several maintenancing features to fix most issues
+- 🧪 Optional experimental features that can be turned on and off
+
+> __Disclaimer:__ StoreControl is still in beta at this time, so issues are expected to arise.
+
+## Credits
+- Ian Beer and zhuowei for the used MacDirtyCow exploits
+- iBaDev for finding the initial DemoLoop patching method
