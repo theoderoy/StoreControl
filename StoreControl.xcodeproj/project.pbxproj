@@ -50,6 +50,7 @@
 		F0BC034B29AA00AD004D3DE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0BC035329AA0141004D3DE8 /* StoreControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreControl-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0FD0B4429B50CEB00CC48F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F0FD0B4529B52D8100CC48F7 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		F01C988529B370C7001D6E06 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				F0FD0B4529B52D8100CC48F7 /* Images */,
 				F01C988629B37C74001D6E06 /* provisioning.md */,
 			);
 			path = Documentation;
