@@ -1,7 +1,7 @@
 # Installing DemoLoop authentically from Apple's Servers
 To install DemoLoop directly from Apple and patch it using StoreControl, you'll need to provision it correctly to install it.
 
-- If you would like to skip these steps, sideloading DemoLoop with a third-party service to use it with StoreControl is supported, but you'll need to enter the Bundle ID of the DemoLoop instance later on.
+- If you would like to skip these steps, sideloading DemoLoop with a third-party service to use it with StoreControl is partially supported as a very experimental feature.
 
 ## Requirements
 
