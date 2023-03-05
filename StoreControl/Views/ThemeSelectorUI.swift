@@ -247,6 +247,44 @@ struct ThemeSelectorUI: View {
                                             .frame(maxWidth: 100)
                                             .foregroundColor(.secondary)
                                     } .disabled(themeButtonPress == false)
+                                    VStack {
+                                        Image("BlocksMarker")
+                                            .renderingMode(.original)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 140, height: .infinity)
+                                            .clipped()
+                                        Button(action: {
+                                            appState.selectedtheme = ("Tidals")
+                                            consoleManager.print("Selected theme is \(appState.selectedtheme)")
+                                            presentSurgeryMenu = true
+                                        }) {
+                                            HStack {
+                                                Spacer()
+                                                Text("Tidals")
+                                                    .font(.body.weight(.semibold))
+                                                    .foregroundColor(Color(.systemBackground))
+                                                Spacer()
+                                            }
+                                            .padding(.horizontal, 16)
+                                            .frame(maxHeight: 40)
+                                            .background(
+                                                Capsule(style: .continuous)
+                                                    .foregroundColor(.primary)
+                                            )
+                                            .padding(.horizontal, 8)
+                                        } .fullScreenCover(isPresented: $presentSurgeryMenu) {
+                                            DemoLoopSurgeryAdd()
+                                        }
+                                        Spacer(minLength: 15)
+                                        Text("4K | 120fps")
+                                            .frame(maxWidth: 145)
+                                            .foregroundColor(.primary)
+                                        Spacer(minLength: 5)
+                                        Text("swifticul")
+                                            .frame(maxWidth: 100)
+                                            .foregroundColor(.secondary)
+                                    } .disabled(themeButtonPress == false)
                                     if appState.lariotheme {
                                         VStack {
                                             Image("SuperstarMarker")
