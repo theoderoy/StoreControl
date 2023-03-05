@@ -5,9 +5,9 @@
 <p align="center">Enable the Screen Saver experience from Apple Demo devices in stores on your home devices! (from iOS 15.0 up to iOS 16.1.2 with MacDirtyCow)</p>
 &nbsp;
 <p align="center">
-<img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/home.png' width="250">
-<img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/saver.png' width="250">
-<img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/themes.png' width="250">
+<img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/home.png' width="230">
+<img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/saver.png' width="230">
+<img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/themes.png' width="230">
 </p>
 &nbsp;
 
