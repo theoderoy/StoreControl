@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Settings</key>
+	<dict>
+		<key>OpenHours</key>
+		<dict>
+			<key>closeAt</key>
+			<string>00:00</string>
+			<key>inactivityDelayMinutes</key>
+			<integer>60</integer>
+			<key>openAt</key>
+			<string>00:00</string>
+		</dict>
+	</dict>
+	<key>VideoItems</key>
+	<dict>
+		<key>1</key>
+		<dict>
+			<key>Assets</key>
+			<array>
+				<dict>
+					<key>DeviceDescriptor</key>
+					<dict>
+						<key>UserInterfaceIdiom</key>
+						<string>pad</string>
+					</dict>
+					<key>Orientations</key>
+					<string>landscape</string>
+					<key>URL</key>
+					<string>iPad_Landscape.m4v</string>
+				</dict>
+				<dict>
+					<key>DeviceDescriptor</key>
+					<dict>
+						<key>UserInterfaceIdiom</key>
+						<string>pad</string>
+					</dict>
+					<key>Orientations</key>
+					<string>portrait</string>
+					<key>URL</key>
+					<string>iPad_Portrait.m4v</string>
+				</dict>
+				<dict>
+					<key>DeviceDescriptor</key>
+					<dict>
+						<key>UserInterfaceIdiom</key>
+						<string>phone</string>
+					</dict>
+					<key>Orientations</key>
+					<string>portrait</string>
+					<key>URL</key>
+					<string>iPhone_Portrait.m4v</string>
+				</dict>
+			</array>
+			<key>CampaignLabel</key>
+			<string></string>
+			<key>Synchronized</key>
+			<false/>
+			<key>id</key>
+			<string>1</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
