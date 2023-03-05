@@ -143,7 +143,6 @@ struct DemoLoopSurgeryAdd: View {
                     .frame(height: 20)
                     .clipped()
                 Button("Dismiss and Restart") {
-                    self.presentationMode.wrappedValue.dismiss()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         exit(0)
                     }

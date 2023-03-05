@@ -13,19 +13,31 @@ struct RootView: View {
     @StateObject var appState = AppState()
     @State var restoreText = ("Restore DemoLoop")
     @State var showUnrestoreSuccess = false
+    @State var presentResetMenu = false
     var body: some View {
         NavigationView {
             List {
                 Section {
                     Image("IconInApp")
-                                    .renderingMode(.original)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 130)
-                                    .clipped()
-                            Text("StoreControl")
-                                .font(.largeTitle.weight(.bold))
-                    Text("Version v\(appVersion ?? "AppVersion") - MDC and TCCD exploits by Ian Beer & zhuowei - Initial patch method by iBaDev")
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 130)
+                        .clipped()
+                    Text("StoreControl")
+                        .font(.largeTitle.weight(.bold))
+                    HStack {
+                        Text("Version v\(appVersion ?? "AppVersion")")
+                        Capsule(style: .continuous)
+                            .frame(width: 80, height: 30)
+                            .clipped()
+                            .foregroundColor(.blue)
+                            .overlay {
+                                Text("BETA")
+                                    .font(.footnote.weight(.semibold))
+                                    .foregroundColor(.white)
+                            }
+                    }
                 }
                 Section {
                     NavigationLink(destination: Group {
@@ -54,8 +66,15 @@ struct RootView: View {
                     NavigationLink(destination: ExperimentsInterface()) {
                         Text("Experimental Features")
                     }
+                    Button("Reset All Settings") {
+                        presentResetMenu = true
+                    } .fullScreenCover(isPresented: $presentResetMenu) {
+                        ResetConfirm()
+                    }
+                } header: {
+                    Text("options")
                 } footer: {
-                    Text("LocalConsole by duraidabdul")
+                    Text("LocalConsole by duraidabdul\nMDC and TCCD exploits by Ian Beer & zhuowei - Initial patch method by iBaDev")
                 }
             }
         } .navigationViewStyle(StackNavigationViewStyle()) .sheet(isPresented: $showUnrestoreSuccess) {
@@ -196,11 +215,55 @@ struct surgeryRemoveSuccess: View {
                         .frame(height: 20)
                         .clipped()
             Button("Dismiss and Restart") {
-                self.presentationMode.wrappedValue.dismiss()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     exit(0)
                 }
                     }
+                }
+        }
+    }
+
+struct ResetConfirm: View {
+    @Environment(\.presentationMode) var presentationMode
+    @StateObject var appState = AppState()
+    var body: some View {
+        VStack {
+                    Image(systemName: "questionmark.folder")
+                        .imageScale(.medium)
+                        .font(.system(size: 150, weight: .regular, design: .default))
+                    Spacer()
+                        .frame(height: 41)
+                        .clipped()
+                    Text("Resetting StoreControl")
+                        .font(.largeTitle.weight(.bold))
+                        .multilineTextAlignment(.center)
+                        .frame(width: 350)
+                    Spacer()
+                        .frame(height: 20)
+                        .clipped()
+                    Text("Are you sure you would like to reset StoreControl?\n\nYou should only perform this function if DemoLoop was uninstalled and StoreControl has not unrestored, or if StoreControl is experiencing issues that unrestoring DemoLoop cannot fix.")
+                        .font(.subheadline.weight(.regular))
+                        .frame(width: 320)
+                        .clipped()
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                        .frame(height: 20)
+                        .clipped()
+            Button("I'm Sure, Continue") {
+                consoleManager.isVisible = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    appState.demoloopon = false
+                    appState.ButtonText = ("Restore DemoLoop")
+                    appState.selectedtheme = ("Pommes")
+                    appState.customappid = false
+                    appState.appidstring = ("")
+                    appState.lariotheme = false
+                    exit(0)
+                }
+            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(width: 350)
+            Button("No Thanks, Return") {
+                self.presentationMode.wrappedValue.dismiss()
+            }
                 }
         }
     }

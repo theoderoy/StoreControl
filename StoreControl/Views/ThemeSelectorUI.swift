@@ -127,7 +127,7 @@ struct ThemeSelectorUI: View {
                             Text("Exclusive Themes")
                                 .padding(.leading)
                                 .font(.title3.weight(.semibold))
-                            Text("Custom-Made Screen Savers")
+                            Text("Community-made Themes")
                                 .padding(.leading)
                                 .font(.headline.weight(.regular))
                                 .foregroundColor(.secondary)
@@ -314,14 +314,14 @@ struct ThemeSelectorUI: View {
                                                 .padding(.horizontal, 8)
                                             }
                                             Capsule(style: .continuous)
-                                                                                .frame(width: 80, height: 30)
-                                                                                .clipped()
-                                                                                .foregroundColor(.orange)
-                                                                                .overlay {
-                                                                                    Text("BETA")
-                                                                                        .font(.footnote.weight(.semibold))
-                                                                                        .foregroundColor(.white)
-                                                                                }
+                                                .frame(width: 80, height: 30)
+                                                .clipped()
+                                                .foregroundColor(.blue)
+                                                .overlay {
+                                                    Text("BETA")
+                                                        .font(.footnote.weight(.semibold))
+                                                        .foregroundColor(.white)
+                                                }
                                         } .disabled(themeButtonPress == false) .sheet(isPresented: $showSuccess) {
                                             surgerySuccess()
                                         }
@@ -337,7 +337,7 @@ struct ThemeSelectorUI: View {
                         }) {
                             Text("Restore Current Theme")
                         }
-                        .fullScreenCover(isPresented: $presentSurgeryMenu) {
+                        .disabled(appState.demoloopon == false) .fullScreenCover(isPresented: $presentSurgeryMenu) {
                             DemoLoopSurgeryAdd()
                         }
                     }
@@ -374,9 +374,9 @@ struct ThemeSelectorUI: View {
             SurgerySuccessful = true
             appState.ButtonText = "Reinstall Resources"
             appState.demoloopon = true
-            themeButtonPress = true
             showSuccess = true
         }
+        themeButtonPress = true
     }
     func searchForFolderName() -> String? {
         if appState.customappid == true {
@@ -450,7 +450,6 @@ struct ThemeSelectorUI: View {
                     .frame(height: 20)
                     .clipped()
                 Button("Dismiss and Restart") {
-                    self.presentationMode.wrappedValue.dismiss()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         exit(0)
                     }

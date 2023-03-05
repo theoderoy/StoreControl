@@ -49,6 +49,7 @@
 		F0BC034829AA00AD004D3DE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0BC034B29AA00AD004D3DE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0BC035329AA0141004D3DE8 /* StoreControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreControl-Bridging-Header.h"; sourceTree = "<group>"; };
+		F0FD0B4429B50CEB00CC48F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 		F0BC034329AA00AC004D3DE8 /* StoreControl */ = {
 			isa = PBXGroup;
 			children = (
+				F0FD0B4429B50CEB00CC48F7 /* Info.plist */,
 				F0BC034429AA00AC004D3DE8 /* Root.swift */,
 				F05FDD5B29ABC13300FDD6DA /* Constants.swift */,
 				F0BC035229AA0114004D3DE8 /* MDC */,
@@ -378,8 +380,8 @@
 				DEVELOPMENT_TEAM = J6BD6Z3Y7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoreControl/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape the sandbox to perform surgery on the DemoLoop app";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -417,8 +419,8 @@
 				DEVELOPMENT_TEAM = J6BD6Z3Y7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoreControl/Info.plist;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape the sandbox to perform surgery on the DemoLoop app";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
