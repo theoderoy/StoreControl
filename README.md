@@ -9,9 +9,6 @@
 <img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/saver.png' width="230">
 <img src='https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/themes.png' width="230">
 </p>
-&nbsp;
-
-> __StoreControl is currently work-in-progress.__
 
 ## Features
 - 🪂 Different selectable themes created by Apple or the community (I encourage submitting your own custom themes with pull-requests for in future updates)!
