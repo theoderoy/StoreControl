@@ -4,6 +4,9 @@
 <h1 align="center">StoreControl (beta)</h1>
 <p align="center">Using StoreControl, you can restore functionallity of the Screen Savers that can be found on Demo devices in Apple stores on your home devices! (from iOS 14.0 up to iOS 16.1.2 with MacDirtyCow support)</p>
 <p align="center">
+  <a href="https://connect.sidestore.ml">
+    <img src="https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/19AEDFC5-7163-4F4E-A918-5610D1EB5BA2.png" width="280">
+  </a>
   <a href="https://nocodehub.ga">
     <img src="https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/35299CC5-0638-4927-8A74-8234D50421E6.png" width="280">
   </a>
