@@ -5,7 +5,7 @@
 <p align="center">Using StoreControl, you can restore functionallity of the Screen Savers that can be found on Demo devices in Apple stores on your home devices! (from iOS 14.0 up to iOS 16.1.2 with MacDirtyCow support)</p>
 <p align="center">
   <a href="https://nocodehub.ga">
-    <img src="https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/59429AF6-1941-4824-A119-C64E7FDBCEB7.png" width="280">
+    <img src="https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/35299CC5-0638-4927-8A74-8234D50421E6.png" width="280">
   </a>
 </p>
 &nbsp;
