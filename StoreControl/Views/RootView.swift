@@ -10,6 +10,10 @@ import Foundation
 
 struct RootView: View {
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    var buildNumber: String {
+            guard let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else { return "" }
+            return "   \(buildNumber)   "
+        }
     @StateObject var appState = AppState()
     @State var restoreText = ("Restore DemoLoop")
     @State var showUnrestoreSuccess = false
@@ -29,14 +33,14 @@ struct RootView: View {
                     HStack {
                         Text("Version v\(appVersion ?? "AppVersion")")
                         Capsule(style: .continuous)
-                            .frame(width: 80, height: 30)
+                            .frame(width: getWidth(text: buildNumber), height: 30)
                             .clipped()
                             .foregroundColor(.blue)
-                            .overlay {
-                                Text("BETA")
+                            .overlay(
+                                Text("\(buildNumber)")
                                     .font(.footnote.weight(.semibold))
                                     .foregroundColor(.white)
-                            }
+                            )
                     }
                 }
                 Section {
@@ -165,6 +169,13 @@ func PrettyPlease() {
             }
         }
     
+}
+
+func getWidth(text: String) -> CGFloat {
+    let font = UIFont.boldSystemFont(ofSize: UIFont.preferredFont(forTextStyle: .footnote).pointSize)
+    let attributes = [NSAttributedString.Key.font: font]
+    let size = (text as NSString).size(withAttributes: attributes)
+    return size.width
 }
 
 public struct ButtonFromInteractfulROFL: ButtonStyle {

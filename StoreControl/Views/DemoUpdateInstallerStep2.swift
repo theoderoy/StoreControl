@@ -34,7 +34,7 @@ struct DemoUpdateInstallerStep2: View {
             NavigationLink(destination: ThemeSelectorUI()) {
                 Text("Continue")
             }
-        }
+        } .padding()
     }
 }
 
