@@ -2,7 +2,7 @@
   <img src='https://raw.githubusercontent.com/Swifticul/StoreControl/main/Documentation/Images/F64A45F8-CFDF-425A-B9EF-CDAA520D2F35.png' width="100">
 </p>
 <h1 align="center">StoreControl (beta)</h1>
-<p align="center">Enable the Screen Saver experience from Apple Demo devices in stores on your home devices! (from iOS 15.0 up to iOS 16.1.2 with MacDirtyCow)</p>
+<p align="center">Using StoreControl, you can restore functionallity of the Screen Savers that can be found on Demo devices in Apple stores on your home devices! (from iOS 14.0 up to iOS 16.1.2 with MacDirtyCow support)</p>
 <p align="center">
   <a href="https://nocodehub.ga">
     <img src="https://github.com/Swifticul/StoreControl/raw/main/Documentation/Images/59429AF6-1941-4824-A119-C64E7FDBCEB7.png" width="280">
