@@ -13,30 +13,37 @@ struct DemoLoopSurgeryAdd: View {
     @Environment(\.presentationMode) private var presentationMode
     @StateObject var appState = AppState()
     @State var EnablePerformButton = true
-    @State var showSuccess = false
     var body: some View {
-        VStack(spacing: 25) {
-            Image("SurgeryIndicatorIconInApp")
-                .renderingMode(.original)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150)
-                .clipped()
-            Text("Patching DemoLoop")
-                .font(.largeTitle.weight(.bold))
-                .multilineTextAlignment(.center)
-                .frame(width: 350)
-            Text("StoreControl will try to restore DemoLoop and apply the selected \(appState.selectedtheme) theme.\n\n You can override this theme with a new one without having to unrestore. Unrestoring is only useful for removing a faulty theme and for other issues.")
-                .font(.subheadline.weight(.regular))
-                .frame(width: 340)
-                .clipped()
-                .multilineTextAlignment(.center)
-            Button("\(appState.ButtonText)") {
-                SurgeryAdd()
-                EnablePerformButton = false
-            } .disabled(EnablePerformButton == false) .buttonStyle(ButtonFromInteractfulROFL()) .frame(width: 350)
-        } .sheet(isPresented: $showSuccess) {
-            surgerySuccess()
+        GeometryReader { geometry in
+            VStack(spacing: 25) {
+                Image("SurgeryIndicatorIconInApp")
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 170)
+                    .clipped()
+                Text("Restoring DemoLoop")
+                    .font(.largeTitle.weight(.bold))
+                    .multilineTextAlignment(.center)
+                    .frame(width: geometry.size.width * 0.9)
+                Text("StoreControl will try to restore DemoLoop and apply the selected \(appState.selectedTheme) theme.\n\n You can override this theme with a new one without having to unpatch.")
+                    .font(.subheadline.weight(.regular))
+                    .frame(width: geometry.size.width * 0.85)
+                    .clipped()
+                    .multilineTextAlignment(.center)
+                Button("\(appState.buttonText)") {
+                    SurgeryAdd()
+                    EnablePerformButton = false
+                } .disabled(EnablePerformButton == false) .buttonStyle(ButtonFromInteractfulROFL()) .frame(width: geometry.size.width * 0.9)
+                    .padding(.bottom, 20)
+                Button("No Thanks, Return") {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+                .padding(.bottom, 20)
+            }
+            .padding(.horizontal, geometry.size.width * 0.05)
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            .background(Color.clear)
         }
     }
     func SurgeryAdd() {
@@ -44,8 +51,8 @@ struct DemoLoopSurgeryAdd: View {
         if let folderName = searchForFolderName() {
             consoleManager.print("Found folder: \(folderName)")
             let appBundlePath = Bundle.main.bundlePath
-            consoleManager.print("Application Support Source: \(appBundlePath)/Themes/\(appState.selectedtheme)")
-            let originalPath = "\(appBundlePath)/Themes/\(appState.selectedtheme)/Application Support"
+            consoleManager.print("Application Support Source: \(appBundlePath)/Themes/\(appState.selectedTheme)")
+            let originalPath = "\(appBundlePath)/Themes/\(appState.selectedTheme)/Application Support"
             let destinationPath = "/private/var/mobile/Containers/Data/Application/\(folderName)/Library/Application Support"
             consoleManager.print("Destination Path: \(destinationPath)")
             do {
@@ -66,13 +73,18 @@ struct DemoLoopSurgeryAdd: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             SurgerySuccessful = true
             EnablePerformButton = true
-            appState.ButtonText = "Reinstall Resources"
-            appState.demoloopon = true
-            showSuccess = true
+            appState.buttonText = "Reinstall Resources"
+            appState.demoLoopOn = true
+            if let url = URL(string: "demoloop://") {
+                UIApplication.shared.open(url)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    exit(0)
+                }
+            }
         }
     }
     func searchForFolderName() -> String? {
-        if appState.customappid == true {
+        if appState.customAppID == true {
             let fileManager = FileManager.default
             let appDirectory = "/private/var/mobile/Containers/Data/Application/"
             do {
@@ -82,7 +94,7 @@ struct DemoLoopSurgeryAdd: View {
                     let metadataData = try Data(contentsOf: URL(fileURLWithPath: metadataFilePath))
                     let metadataPlist = try PropertyListSerialization.propertyList(from: metadataData, format: nil) as? [String: Any]
                     
-                    if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "\(appState.appidstring)" {
+                    if let bundleId = metadataPlist?["MCMMetadataIdentifier"] as? String, bundleId == "\(appState.appIDString)" {
                         return folderName
                     }
                 }
@@ -114,40 +126,6 @@ struct DemoLoopSurgeryAdd: View {
     struct DemoLoopSurgeryAdd_Previews: PreviewProvider {
         static var previews: some View {
             DemoLoopSurgeryAdd()
-        }
-    }
-    
-    struct surgerySuccess: View {
-        @Environment(\.presentationMode) var presentationMode
-        var body: some View {
-            VStack {
-                Image(systemName: "app.badge.checkmark.fill")
-                    .imageScale(.medium)
-                    .font(.system(size: 150, weight: .regular, design: .default))
-                Spacer()
-                    .frame(height: 41)
-                    .clipped()
-                Text("Patching Successful!")
-                    .font(.largeTitle.weight(.bold))
-                    .multilineTextAlignment(.center)
-                    .frame(width: 350)
-                Spacer()
-                    .frame(height: 20)
-                    .clipped()
-                Text("DemoLoop has been successfully patched using the selected theme.\n\nRestart StoreControl to unlock new options.")
-                    .font(.subheadline.weight(.regular))
-                    .frame(width: 320)
-                    .clipped()
-                    .multilineTextAlignment(.center)
-                Spacer()
-                    .frame(height: 20)
-                    .clipped()
-                Button("Dismiss and Restart") {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        exit(0)
-                    }
-                }
-            }
         }
     }
 }

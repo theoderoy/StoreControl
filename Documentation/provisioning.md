@@ -1,11 +1,11 @@
 # Installing DemoLoop authentically from Apple's Servers
-To install DemoLoop directly from Apple and patch it using StoreControl, you'll need to provision it correctly to install it.
+To install DemoLoop directly from Apple and restore it using StoreControl, you'll need to provision it correctly to install it.
 
-- If you would like to skip these steps, sideloading DemoLoop with a third-party service to use it with StoreControl is partially supported as a very experimental feature.
+- If you would like to skip these steps, sideloading DemoLoop with a third-party service to use it with StoreControl is partially supported as an experimental feature.
 
 ## Requirements
 
-- A Mac or Windows computer *(that can run the latest of the following:)*
+- A Mac or Windows computer (that can run the latest of the following:)
 - Apple Configurator 2 (for macOS only) or iMazing (for macOS and Window)
 
 Download the Apple Partner Demo Profile here: https://github.com/Swifticul/StoreControl/raw/main/Downloads/Profiles/profile.mobileprovision

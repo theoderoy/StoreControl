@@ -7,7 +7,6 @@
 
 import SwiftUI
 import UIKit
-import WebKit
 
 let deviceName = UIDevice.current.name
 
@@ -15,47 +14,36 @@ struct DemoUpdateInstallerStep1: View {
     @State private var isPresented = false
     @State var showSuccess = false
     var body: some View {
-        VStack(spacing: 25) {
-            Image("ProfileInstallerIconInApp")
-                .renderingMode(.original)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 170)
-                .clipped()
-                .shadow(color: .blue.opacity(0.38), radius: 18, x: 0, y: 12)
-            Text("Provisioning \(deviceName)")
-                .font(.largeTitle.weight(.bold))
-                .multilineTextAlignment(.center)
-                .frame(width: 350)
-            Text("In order to install DemoLoop authentically, you will need to install the Apple Partner Demo Profile.")
-                .font(.subheadline.weight(.regular))
-                .frame(width: 340)
-                .clipped()
-                .multilineTextAlignment(.center)
-            Button("Installation Instructions") {
-                isPresented = true
-            } .buttonStyle(ButtonFromInteractfulROFL()) .frame(maxWidth: 350) .sheet(isPresented: $isPresented) {
-                WebView(url: "https://github.com/Swifticul/StoreControl/blob/main/Documentation/provisioning.md#requirements")
+        GeometryReader { geometry in
+            VStack(spacing: 25) {
+                Image("ProfileInstallerIconInApp")
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 170)
+                    .clipped()
+                    .shadow(color: .blue.opacity(0.38), radius: 18, x: 0, y: 12)
+                Text("Provisioning \(deviceName)")
+                    .font(.largeTitle.weight(.bold))
+                    .multilineTextAlignment(.center)
+                    .frame(width: geometry.size.width - 40) // Add padding of 20 points on either side
+                Text("In order to install DemoLoop authentically, you will need to install the Apple Provisioning Profile.")
+                    .multilineTextAlignment(.center)
+                    .frame(width: geometry.size.width - 40) // Add padding of 20 points on either side
+                Button(action: {
+                    self.isPresented.toggle()
+                }) {
+                    Text("Installation Instructions")
+                } .buttonStyle(ButtonFromInteractfulROFL())
+                .sheet(isPresented: $isPresented) {
+                    ProvisionMarkdown()
+                }
+                NavigationLink(destination: DemoUpdateInstallerStep2()) {
+                    Text("Skip & Continue")
+                }
             }
-            NavigationLink(destination: DemoUpdateInstallerStep2()) {
-                Text("Skip & Continue")
-            }
-        }
-    }
-    
-    struct WebView: UIViewRepresentable {
-        let url: String
-        
-        func makeUIView(context: Context) -> WKWebView {
-            let webView = WKWebView()
-            if let url = URL(string: self.url) {
-                let request = URLRequest(url: url)
-                webView.load(request)
-            }
-            return webView
-        }
-        
-        func updateUIView(_ uiView: WKWebView, context: Context) {
+            .padding(.horizontal, 20) // Add padding of 20 points on either side of the screen
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center) // Center the contents
         }
     }
     

@@ -14,7 +14,7 @@ let consoleManager = LCManager.shared
 struct StoreControlApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootViewMDC()
         }
     }
 }

@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		F01C988429B37049001D6E06 /* Profiles in Resources */ = {isa = PBXBuildFile; fileRef = F01C988329B37049001D6E06 /* Profiles */; };
+		F0225BBD29D751A200D41562 /* ProvisionMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0225BBC29D751A200D41562 /* ProvisionMarkdown.swift */; };
 		F04D5B8F29B3883C00CAF926 /* Themes in Resources */ = {isa = PBXBuildFile; fileRef = F04D5B8E29B3883C00CAF926 /* Themes */; };
 		F05FDD4D29AB5B2600FDD6DA /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4829AB5B2600FDD6DA /* helpers.m */; };
 		F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */; };
 		F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */; };
 		F05FDD5129AB5B5B00FDD6DA /* ipabuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */; };
 		F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5B29ABC13300FDD6DA /* Constants.swift */; };
-		F072BECF29C20A3500980CE3 /* ExperimentsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BEC929C20A3400980CE3 /* ExperimentsInterface.swift */; };
-		F072BED029C20A3500980CE3 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECA29C20A3400980CE3 /* RootView.swift */; };
+		F072BECF29C20A3500980CE3 /* OptionsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BEC929C20A3400980CE3 /* OptionsInterface.swift */; };
+		F072BED029C20A3500980CE3 /* RootViewMDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECA29C20A3400980CE3 /* RootViewMDC.swift */; };
 		F072BED129C20A3500980CE3 /* DemoLoopSurgeryAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECB29C20A3400980CE3 /* DemoLoopSurgeryAdd.swift */; };
 		F072BED229C20A3500980CE3 /* DemoUpdateInstallerStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECC29C20A3400980CE3 /* DemoUpdateInstallerStep1.swift */; };
 		F072BED329C20A3500980CE3 /* ThemeSelectorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECD29C20A3500980CE3 /* ThemeSelectorUI.swift */; };
 		F072BED429C20A3500980CE3 /* DemoUpdateInstallerStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECE29C20A3500980CE3 /* DemoUpdateInstallerStep2.swift */; };
+		F07D959729D4A08E008003C3 /* ButtonFromInteractfulROFL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D959629D4A08E008003C3 /* ButtonFromInteractfulROFL.swift */; };
 		F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034429AA00AC004D3DE8 /* Root.swift */; };
 		F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034829AA00AD004D3DE8 /* Assets.xcassets */; };
 		F0BC034C29AA00AD004D3DE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034B29AA00AD004D3DE8 /* Preview Assets.xcassets */; };
@@ -29,6 +31,7 @@
 /* Begin PBXFileReference section */
 		F01C988329B37049001D6E06 /* Profiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Profiles; sourceTree = "<group>"; };
 		F01C988629B37C74001D6E06 /* provisioning.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = provisioning.md; sourceTree = "<group>"; };
+		F0225BBC29D751A200D41562 /* ProvisionMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionMarkdown.swift; sourceTree = "<group>"; };
 		F04D5B8E29B3883C00CAF926 /* Themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Themes; sourceTree = "<group>"; };
 		F05FDD4729AB5B2600FDD6DA /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		F05FDD4829AB5B2600FDD6DA /* helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
@@ -38,12 +41,13 @@
 		F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = grant_full_disk_access.m; sourceTree = "<group>"; };
 		F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ipabuild.sh; sourceTree = "<group>"; };
 		F05FDD5B29ABC13300FDD6DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F072BEC929C20A3400980CE3 /* ExperimentsInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentsInterface.swift; sourceTree = "<group>"; };
-		F072BECA29C20A3400980CE3 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F072BEC929C20A3400980CE3 /* OptionsInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsInterface.swift; sourceTree = "<group>"; };
+		F072BECA29C20A3400980CE3 /* RootViewMDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewMDC.swift; sourceTree = "<group>"; };
 		F072BECB29C20A3400980CE3 /* DemoLoopSurgeryAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoLoopSurgeryAdd.swift; sourceTree = "<group>"; };
 		F072BECC29C20A3400980CE3 /* DemoUpdateInstallerStep1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep1.swift; sourceTree = "<group>"; };
 		F072BECD29C20A3500980CE3 /* ThemeSelectorUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSelectorUI.swift; sourceTree = "<group>"; };
 		F072BECE29C20A3500980CE3 /* DemoUpdateInstallerStep2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep2.swift; sourceTree = "<group>"; };
+		F07D959629D4A08E008003C3 /* ButtonFromInteractfulROFL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFromInteractfulROFL.swift; sourceTree = "<group>"; };
 		F0BC034129AA00AC004D3DE8 /* StoreControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BC034429AA00AC004D3DE8 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		F0BC034829AA00AD004D3DE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +92,14 @@
 				F04D5B8E29B3883C00CAF926 /* Themes */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F07D959529D4A04F008003C3 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				F07D959629D4A08E008003C3 /* ButtonFromInteractfulROFL.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		F0BC033829AA00AB004D3DE8 = {
@@ -149,12 +161,14 @@
 		F0BC035D29AA0176004D3DE8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F072BECB29C20A3400980CE3 /* DemoLoopSurgeryAdd.swift */,
+				F07D959529D4A04F008003C3 /* Objects */,
+				F072BECA29C20A3400980CE3 /* RootViewMDC.swift */,
 				F072BECC29C20A3400980CE3 /* DemoUpdateInstallerStep1.swift */,
 				F072BECE29C20A3500980CE3 /* DemoUpdateInstallerStep2.swift */,
-				F072BEC929C20A3400980CE3 /* ExperimentsInterface.swift */,
-				F072BECA29C20A3400980CE3 /* RootView.swift */,
 				F072BECD29C20A3500980CE3 /* ThemeSelectorUI.swift */,
+				F072BECB29C20A3400980CE3 /* DemoLoopSurgeryAdd.swift */,
+				F072BEC929C20A3400980CE3 /* OptionsInterface.swift */,
+				F0225BBC29D751A200D41562 /* ProvisionMarkdown.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,9 +260,11 @@
 				F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */,
 				F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */,
 				F072BED129C20A3500980CE3 /* DemoLoopSurgeryAdd.swift in Sources */,
-				F072BECF29C20A3500980CE3 /* ExperimentsInterface.swift in Sources */,
-				F072BED029C20A3500980CE3 /* RootView.swift in Sources */,
+				F072BECF29C20A3500980CE3 /* OptionsInterface.swift in Sources */,
+				F0225BBD29D751A200D41562 /* ProvisionMarkdown.swift in Sources */,
+				F072BED029C20A3500980CE3 /* RootViewMDC.swift in Sources */,
 				F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */,
+				F07D959729D4A08E008003C3 /* ButtonFromInteractfulROFL.swift in Sources */,
 				F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,25 +393,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "PUBLIC TESTING";
+				CURRENT_PROJECT_VERSION = "RELEASE BETA";
 				DEVELOPMENT_ASSET_PATHS = "\"StoreControl/Preview Content\"";
 				DEVELOPMENT_TEAM = J6BD6Z3Y7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StoreControl/Info.plist;
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape the sandbox to perform surgery on the DemoLoop app";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape sandbox to restore or unpatch DemoLoop.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifticul.StoreControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -416,25 +432,25 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "PUBLIC TESTING";
+				CURRENT_PROJECT_VERSION = "RELEASE BETA";
 				DEVELOPMENT_ASSET_PATHS = "\"StoreControl/Preview Content\"";
 				DEVELOPMENT_TEAM = J6BD6Z3Y7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StoreControl/Info.plist;
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape the sandbox to perform surgery on the DemoLoop app";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape sandbox to restore or unpatch DemoLoop.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifticul.StoreControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

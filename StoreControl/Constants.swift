@@ -8,10 +8,11 @@
 import SwiftUI
 
 class AppState: ObservableObject {
-    @AppStorage("demoloop on") var demoloopon: Bool = false
-    @AppStorage("button text") var ButtonText: String = ("Restore DemoLoop")
-    @AppStorage("selected theme") var selectedtheme: String = ("Pommes")
-    @AppStorage("custom app id") var customappid: Bool = false
-    @AppStorage("app id string") var appidstring: String = ("")
-    @AppStorage("lario trolled") var lariotheme: Bool = false
+    @AppStorage("DO") var demoLoopOn: Bool = false
+    @AppStorage("BT") var buttonText: String = ("Restore DemoLoop")
+    @AppStorage("ST") var selectedTheme: String = ("Pommes")
+    @AppStorage("CAI") var customAppID: Bool = false
+    @AppStorage("AIS") var appIDString: String = ("")
+    @AppStorage("LT") var larioTheme: Bool = false
+    @AppStorage("14IK") var fourteenIKnow: Bool = false
 }
