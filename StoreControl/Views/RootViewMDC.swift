@@ -16,7 +16,7 @@ struct RootViewMDC: View {
             return "     \(buildNumber)     "
         }
     func fourteenChecks() -> Bool {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 15.0, *) {
                 return false
             } else {
                 if appState.fourteenIKnow == true {
