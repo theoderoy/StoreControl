@@ -19,7 +19,7 @@ struct DemoUpdateInstallerStep2: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 170)
                     .clipped()
-                    .shadow(color: .accentColor.opacity(0.38), radius: 18, x: 0, y: 12)
+                    .shadow(color: .orange.opacity(0.38), radius: 18, x: 0, y: 12)
                 Text("Installing DemoLoop")
                     .font(.largeTitle.weight(.bold))
                     .multilineTextAlignment(.center)
