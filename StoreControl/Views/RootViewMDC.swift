@@ -16,7 +16,7 @@ struct RootViewMDC: View {
             return "     \(buildNumber)     "
         }
     func fourteenChecks() -> Bool {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 17.0, *) {
                 return false
             } else {
                 if appState.fourteenIKnow == true {
@@ -71,7 +71,7 @@ struct RootViewMDC: View {
                     } .disabled(appState.demoLoopOn == false)
                 } footer: {
                     Text("You should only unpatch DemoLoop if you're experiencing errors and/or issues. Selecting a new theme usually just overrides the previous.")
-                } .onAppear(perform: PrettyPlease)
+                }
                 Section {
                     NavigationLink(destination: OptionsInterface()) {
                         Text("Experiments & Flags")
@@ -97,10 +97,10 @@ struct RootViewMDC: View {
                 } footer: {
                     Text("LocalConsole by duraidabdul | MDC and TCCD exploits by Ian Beer & zhuowei | Initial patching method by iBaDev")
                 }
-            }
+            } .onAppear(perform: PrettyPlease)
         } .navigationViewStyle(StackNavigationViewStyle()) .fullScreenCover(isPresented: $showUnpatchSuccess) {
             surgeryRemoveSuccess()
-}
+        }
     }
     
     func SurgeryRemove() {
@@ -253,7 +253,7 @@ struct ResetConfirm: View {
                     .multilineTextAlignment(.center)
                     .frame(width: geometry.size.width - 40) // Add padding of 20 points on either side
                     .padding(.bottom, 20)
-                Text("You should only perform this function if DemoLoop was uninstalled and StoreControl has not performed an unpatch, or if StoreControl is experiencing issues that unrestoring DemoLoop cannot fix.")
+                Text("You should only perform this function if DemoLoop was uninstalled and StoreControl has not performed an unpatch, or if StoreControl is experiencing issues that unpatching cannot fix.")
                     .font(.subheadline.weight(.regular))
                     .frame(width: geometry.size.width - 60) // Add padding of 30 points on either side
                     .clipped()
@@ -304,7 +304,7 @@ struct DangerDangerHighVoltage: View {
                     .multilineTextAlignment(.center)
                     .frame(width: geometry.size.width - 40) // Add padding of 20 points on either side
                     .padding(.bottom, 20)
-                Text("StoreControl now supports iOS 14.x, but it's highly advised you use it on iOS 15.0 or later. MacDirtyCow (exploit used to restore DemoLoop) can have negative consequences with the way that iOS 14 handles files and RAM. If you know exactly what you are doing and continue, you hereby agree that I am not responsible for the possible damage enflicted onto your device.")
+                Text("StoreControl now supports iOS 14.x, but it's highly advised you use it on iOS 15.0 or later. The exploit used to modify DemoLoop can have negative consequences with the way that iOS 14 handles files and RAM. If you know exactly what you are doing, you are instructed to continue. If not, you can safely exit.")
                     .font(.subheadline.weight(.regular))
                     .frame(width: geometry.size.width - 60) // Add padding of 30 points on either side
                     .clipped()

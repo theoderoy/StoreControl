@@ -1,4 +1,4 @@
-# Installing DemoLoop authentically from Apple's Servers
+# Installing DemoLoop authentically from Apple's Servers (v1.1.0 Release Preview)
 To install DemoLoop directly from Apple and restore it using StoreControl, you'll need to provision it correctly to install it.
 
 - If you would like to skip these steps, sideloading DemoLoop with a third-party service to use it with StoreControl is partially supported as an experimental feature.
