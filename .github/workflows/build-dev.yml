@@ -2,7 +2,7 @@ name: Build and Upload IPA
 on:
   push:
     branches:
-      - '*'
+      - '**'
 jobs:
   build:
     runs-on: macos-latest
