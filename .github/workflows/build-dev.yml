@@ -1,23 +1,26 @@
-name: ${{ steps.set-name.outputs.commit-message }}
+name: Build and Upload IPA
 on:
   push:
-    branches: '**'
+    branches:
+      - '*'
 jobs:
   build:
-    runs-on: macos-11
+    runs-on: macos-latest
     steps:
-      - name: Get latest commit message
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Get Latest Commit Message
         id: set-name
-        uses: abeytom/coffee-action@v1.3
-        with:
-          command: |
-            commit_message=$(curl -s https://api.github.com/repos/${{ github.repository }}/commits/${{ github.sha }} | jq -r '.commit.message')
-            echo "::set-output name=commit-message::$commit_message"
-      - uses: actions/checkout@v2
-      - name: Make IPA
+        run: |
+          commit_message=$(curl -s https://api.github.com/repos/${{ github.repository }}/commits/${{ github.sha }} | jq -r '.commit.message')
+          echo "::set-output name=commit-message::$commit_message"
+      - name: Build IPA
         run: ./ipabuild.sh
-      - name: Upload IPA
+        env:
+          APP_NAME: StoreControl
+          BUILD_NUMBER: ${{ github.run_number }}
+      - name: Upload IPA Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: IPA Download
-          path: build/StoreControl.ipa
+          name: StoreControl.ipa
+          path: ./build/StoreControl.ipa
