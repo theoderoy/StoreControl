@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		F01C988429B37049001D6E06 /* Profiles in Resources */ = {isa = PBXBuildFile; fileRef = F01C988329B37049001D6E06 /* Profiles */; };
 		F0225BBD29D751A200D41562 /* ProvisionMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0225BBC29D751A200D41562 /* ProvisionMarkdown.swift */; };
+		F02F2C7A29E46E0C00605D2E /* ipabuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = F02F2C7929E46E0B00605D2E /* ipabuild.sh */; };
 		F04D5B8F29B3883C00CAF926 /* Themes in Resources */ = {isa = PBXBuildFile; fileRef = F04D5B8E29B3883C00CAF926 /* Themes */; };
 		F05FDD4D29AB5B2600FDD6DA /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4829AB5B2600FDD6DA /* helpers.m */; };
 		F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */; };
 		F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */; };
-		F05FDD5129AB5B5B00FDD6DA /* ipabuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */; };
 		F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5B29ABC13300FDD6DA /* Constants.swift */; };
 		F072BECF29C20A3500980CE3 /* OptionsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BEC929C20A3400980CE3 /* OptionsInterface.swift */; };
 		F072BED029C20A3500980CE3 /* RootViewMDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECA29C20A3400980CE3 /* RootViewMDC.swift */; };
@@ -32,6 +32,7 @@
 		F01C988329B37049001D6E06 /* Profiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Profiles; sourceTree = "<group>"; };
 		F01C988629B37C74001D6E06 /* provisioning.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = provisioning.md; sourceTree = "<group>"; };
 		F0225BBC29D751A200D41562 /* ProvisionMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionMarkdown.swift; sourceTree = "<group>"; };
+		F02F2C7929E46E0B00605D2E /* ipabuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ipabuild.sh; sourceTree = "<group>"; };
 		F04D5B8E29B3883C00CAF926 /* Themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Themes; sourceTree = "<group>"; };
 		F05FDD4729AB5B2600FDD6DA /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		F05FDD4829AB5B2600FDD6DA /* helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		F05FDD4A29AB5B2600FDD6DA /* grant_full_disk_access.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grant_full_disk_access.h; sourceTree = "<group>"; };
 		F05FDD4B29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
 		F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = grant_full_disk_access.m; sourceTree = "<group>"; };
-		F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ipabuild.sh; sourceTree = "<group>"; };
 		F05FDD5B29ABC13300FDD6DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F072BEC929C20A3400980CE3 /* OptionsInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsInterface.swift; sourceTree = "<group>"; };
 		F072BECA29C20A3400980CE3 /* RootViewMDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewMDC.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		F0BC033829AA00AB004D3DE8 = {
 			isa = PBXGroup;
 			children = (
-				F05FDD5029AB5B5B00FDD6DA /* ipabuild.sh */,
+				F02F2C7929E46E0B00605D2E /* ipabuild.sh */,
 				F01C988529B370C7001D6E06 /* Documentation */,
 				F01C988229B3701D001D6E06 /* Downloads */,
 				F0BC034329AA00AC004D3DE8 /* StoreControl */,
@@ -241,8 +241,8 @@
 				F04D5B8F29B3883C00CAF926 /* Themes in Resources */,
 				F01C988429B37049001D6E06 /* Profiles in Resources */,
 				F0BC034C29AA00AD004D3DE8 /* Preview Assets.xcassets in Resources */,
-				F05FDD5129AB5B5B00FDD6DA /* ipabuild.sh in Resources */,
 				F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */,
+				F02F2C7A29E46E0C00605D2E /* ipabuild.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,12 +393,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "RELEASE PREVIEW";
+				CURRENT_PROJECT_VERSION = "v1.1.1 (Release Preview)";
 				DEVELOPMENT_ASSET_PATHS = "\"StoreControl/Preview Content\"";
 				DEVELOPMENT_TEAM = J6BD6Z3Y7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StoreControl/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape sandbox to restore or unpatch DemoLoop.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -411,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifticul.StoreControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -432,12 +433,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "RELEASE PREVIEW";
+				CURRENT_PROJECT_VERSION = "v1.1.1 (Release Preview)";
 				DEVELOPMENT_ASSET_PATHS = "\"StoreControl/Preview Content\"";
 				DEVELOPMENT_TEAM = J6BD6Z3Y7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StoreControl/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please allow StoreControl to escape sandbox to restore or unpatch DemoLoop.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifticul.StoreControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

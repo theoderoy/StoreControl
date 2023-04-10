@@ -44,7 +44,6 @@ struct RootViewMDC: View {
                     Text("StoreControl")
                         .font(.largeTitle.weight(.bold))
                     HStack {
-                        Text("v\(appVersion ?? "AppVersion")")
                         Capsule(style: .continuous)
                             .frame(width: getWidth(text: buildNumber), height: 30)
                             .clipped()
