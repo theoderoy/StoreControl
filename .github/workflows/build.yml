@@ -1,41 +1,14 @@
-name: Build StoreControl
+name: ${{ github.workflow }} - ${{ github.sha }}
 on:
   push:
-    branches:
-      - iteration-2
-  pull_request:
-    branches:
-      - iteration-2
-
 jobs:
   build:
     runs-on: macos-11
-
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Make IPA
-      run: ./ipabuild.sh
-
-    - name: Upload IPA artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: StoreControl.ipa
-        path: build/StoreControl.ipa
-
-  set-workflow-name:
-    needs: build
-    runs-on: ubuntu-latest
-    env:
-      COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
-    steps:
-      - name: Set workflow name
-        uses: peter-evans/create-pull-request@v3.8.0
+      - uses: actions/checkout@v3
+      - name: Make IPA
+        run: ./ipabuild.sh
+      - uses: actions/upload-artifact@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Update workflow name
-          title: ${{ env.COMMIT_MESSAGE }}
-          body: Automatically set workflow name to the latest commit description
-          labels: automerge
-          branch: update-workflow-name
-          delete-branch: true
+          name: ${{ github.workflow }} - ${{ format(github.event.head_commit.timestamp, 'yyyy-MM-dd') }}
+          path: build/StoreControl.ipa
