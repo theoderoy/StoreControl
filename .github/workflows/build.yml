@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+      - name: Set Execute Permission for ipabuild.sh
+        run: chmod +x ./ipabuild.sh
       - name: Get Latest Commit Message
         id: set-name
         run: |
