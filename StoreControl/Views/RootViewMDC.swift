@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Foundation
+import InAppSettingsKit
 
 struct RootViewMDC: View {
     @StateObject var appState = AppState()
@@ -31,6 +32,20 @@ struct RootViewMDC: View {
     @State private var showiOS14Disclaimer = false
     @State var presentResetMenu = false
     let globalPadding: CGFloat = 5
+    class MySettingsViewController: IASKAppSettingsViewController {
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissSettingsViewController))
+            navigationItem.rightBarButtonItem = doneButton
+        }
+        
+        @objc func dismissSettingsViewController() {
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
     var body: some View {
         NavigationView {
             List {
@@ -72,10 +87,10 @@ struct RootViewMDC: View {
                     Text("You should only unpatch DemoLoop if you're experiencing errors and/or issues. Selecting a new theme usually just overrides the previous.")
                 }
                 Section {
-                    NavigationLink(destination: OptionsInterface()) {
-                        Text("Experiments & Flags")
-                    } .fullScreenCover(isPresented: $showiOS14Disclaimer) {
-                        DangerDangerHighVoltage()
+                    Button("Open Settings Panel") {
+                        let appSettingsViewController = MySettingsViewController()
+                        let navigationController = UINavigationController(rootViewController: appSettingsViewController)
+                        UIApplication.shared.keyWindow?.rootViewController?.present(navigationController, animated: true, completion: nil)
                     }
                     Button("Toggle Console View") {
                         if consoleManager.isVisible == false {

@@ -15,7 +15,6 @@
 		F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4929AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c */; };
 		F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */; };
 		F05FDD5C29ABC13300FDD6DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05FDD5B29ABC13300FDD6DA /* Constants.swift */; };
-		F072BECF29C20A3500980CE3 /* OptionsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BEC929C20A3400980CE3 /* OptionsInterface.swift */; };
 		F072BED029C20A3500980CE3 /* RootViewMDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECA29C20A3400980CE3 /* RootViewMDC.swift */; };
 		F072BED129C20A3500980CE3 /* DemoLoopSurgeryAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECB29C20A3400980CE3 /* DemoLoopSurgeryAdd.swift */; };
 		F072BED229C20A3500980CE3 /* DemoUpdateInstallerStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECC29C20A3400980CE3 /* DemoUpdateInstallerStep1.swift */; };
@@ -23,6 +22,7 @@
 		F072BED429C20A3500980CE3 /* DemoUpdateInstallerStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECE29C20A3500980CE3 /* DemoUpdateInstallerStep2.swift */; };
 		F07D959729D4A08E008003C3 /* ButtonFromInteractfulROFL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D959629D4A08E008003C3 /* ButtonFromInteractfulROFL.swift */; };
 		F0819DD129E5682E00CE641E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0819DD029E5682E00CE641E /* Settings.bundle */; };
+		F0819DD429E5727300CE641E /* InAppSettingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0819DD329E5727300CE641E /* InAppSettingsKit */; };
 		F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034429AA00AC004D3DE8 /* Root.swift */; };
 		F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034829AA00AD004D3DE8 /* Assets.xcassets */; };
 		F0BC034C29AA00AD004D3DE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034B29AA00AD004D3DE8 /* Preview Assets.xcassets */; };
@@ -42,7 +42,6 @@
 		F05FDD4B29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm_unaligned_copy_switch_race.h; sourceTree = "<group>"; };
 		F05FDD4C29AB5B2600FDD6DA /* grant_full_disk_access.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = grant_full_disk_access.m; sourceTree = "<group>"; };
 		F05FDD5B29ABC13300FDD6DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F072BEC929C20A3400980CE3 /* OptionsInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsInterface.swift; sourceTree = "<group>"; };
 		F072BECA29C20A3400980CE3 /* RootViewMDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewMDC.swift; sourceTree = "<group>"; };
 		F072BECB29C20A3400980CE3 /* DemoLoopSurgeryAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoLoopSurgeryAdd.swift; sourceTree = "<group>"; };
 		F072BECC29C20A3400980CE3 /* DemoUpdateInstallerStep1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep1.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0D088EA29B131EB00A26AF5 /* LocalConsole in Frameworks */,
+				F0819DD429E5727300CE641E /* InAppSettingsKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +170,6 @@
 				F072BECE29C20A3500980CE3 /* DemoUpdateInstallerStep2.swift */,
 				F072BECD29C20A3500980CE3 /* ThemeSelectorUI.swift */,
 				F072BECB29C20A3400980CE3 /* DemoLoopSurgeryAdd.swift */,
-				F072BEC929C20A3400980CE3 /* OptionsInterface.swift */,
 				F0225BBC29D751A200D41562 /* ProvisionMarkdown.swift */,
 			);
 			path = Views;
@@ -194,6 +193,7 @@
 			name = StoreControl;
 			packageProductDependencies = (
 				F0D088E929B131EB00A26AF5 /* LocalConsole */,
+				F0819DD329E5727300CE641E /* InAppSettingsKit */,
 			);
 			productName = StoreControl;
 			productReference = F0BC034129AA00AC004D3DE8 /* StoreControl.app */;
@@ -226,6 +226,7 @@
 			mainGroup = F0BC033829AA00AB004D3DE8;
 			packageReferences = (
 				F0D088E829B131EB00A26AF5 /* XCRemoteSwiftPackageReference "LocalConsole" */,
+				F0819DD229E5727300CE641E /* XCRemoteSwiftPackageReference "InAppSettingsKit" */,
 			);
 			productRefGroup = F0BC034229AA00AC004D3DE8 /* Products */;
 			projectDirPath = "";
@@ -264,7 +265,6 @@
 				F05FDD4F29AB5B2600FDD6DA /* grant_full_disk_access.m in Sources */,
 				F05FDD4E29AB5B2600FDD6DA /* vm_unaligned_copy_switch_race.c in Sources */,
 				F072BED129C20A3500980CE3 /* DemoLoopSurgeryAdd.swift in Sources */,
-				F072BECF29C20A3500980CE3 /* OptionsInterface.swift in Sources */,
 				F0225BBD29D751A200D41562 /* ProvisionMarkdown.swift in Sources */,
 				F072BED029C20A3500980CE3 /* RootViewMDC.swift in Sources */,
 				F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */,
@@ -493,6 +493,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F0819DD229E5727300CE641E /* XCRemoteSwiftPackageReference "InAppSettingsKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/futuretap/InAppSettingsKit";
+			requirement = {
+				kind = exactVersion;
+				version = 3.3.6;
+			};
+		};
 		F0D088E829B131EB00A26AF5 /* XCRemoteSwiftPackageReference "LocalConsole" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/duraidabdul/LocalConsole/";
@@ -504,6 +512,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F0819DD329E5727300CE641E /* InAppSettingsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0819DD229E5727300CE641E /* XCRemoteSwiftPackageReference "InAppSettingsKit" */;
+			productName = InAppSettingsKit;
+		};
 		F0D088E929B131EB00A26AF5 /* LocalConsole */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0D088E829B131EB00A26AF5 /* XCRemoteSwiftPackageReference "LocalConsole" */;
