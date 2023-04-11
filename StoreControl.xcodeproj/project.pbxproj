@@ -22,6 +22,7 @@
 		F072BED329C20A3500980CE3 /* ThemeSelectorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECD29C20A3500980CE3 /* ThemeSelectorUI.swift */; };
 		F072BED429C20A3500980CE3 /* DemoUpdateInstallerStep2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072BECE29C20A3500980CE3 /* DemoUpdateInstallerStep2.swift */; };
 		F07D959729D4A08E008003C3 /* ButtonFromInteractfulROFL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D959629D4A08E008003C3 /* ButtonFromInteractfulROFL.swift */; };
+		F0819DD129E5682E00CE641E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0819DD029E5682E00CE641E /* Settings.bundle */; };
 		F0BC034529AA00AC004D3DE8 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BC034429AA00AC004D3DE8 /* Root.swift */; };
 		F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034829AA00AD004D3DE8 /* Assets.xcassets */; };
 		F0BC034C29AA00AD004D3DE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BC034B29AA00AD004D3DE8 /* Preview Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		F072BECD29C20A3500980CE3 /* ThemeSelectorUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSelectorUI.swift; sourceTree = "<group>"; };
 		F072BECE29C20A3500980CE3 /* DemoUpdateInstallerStep2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoUpdateInstallerStep2.swift; sourceTree = "<group>"; };
 		F07D959629D4A08E008003C3 /* ButtonFromInteractfulROFL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFromInteractfulROFL.swift; sourceTree = "<group>"; };
+		F0819DD029E5682E00CE641E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F0BC034129AA00AC004D3DE8 /* StoreControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BC034429AA00AC004D3DE8 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		F0BC034829AA00AD004D3DE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		F0BC033829AA00AB004D3DE8 = {
 			isa = PBXGroup;
 			children = (
+				F0819DD029E5682E00CE641E /* Settings.bundle */,
 				F02F2C7929E46E0B00605D2E /* ipabuild.sh */,
 				F01C988529B370C7001D6E06 /* Documentation */,
 				F01C988229B3701D001D6E06 /* Downloads */,
@@ -242,6 +245,7 @@
 				F01C988429B37049001D6E06 /* Profiles in Resources */,
 				F0BC034C29AA00AD004D3DE8 /* Preview Assets.xcassets in Resources */,
 				F0BC034929AA00AD004D3DE8 /* Assets.xcassets in Resources */,
+				F0819DD129E5682E00CE641E /* Settings.bundle in Resources */,
 				F02F2C7A29E46E0C00605D2E /* ipabuild.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
