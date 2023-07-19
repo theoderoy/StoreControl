@@ -1,7 +1,7 @@
 <p align="center">
   <img src='https://raw.githubusercontent.com/Swifticul/StoreControl/main/Documentation/Images/F64A45F8-CFDF-425A-B9EF-CDAA520D2F35.png' width="100">
 </p>
-<h1 align="center">StoreControl</h1>
+<h1 align="center">StoreControl (Legacy Branch)</h1>
 <p align="center">Restore functionality of screen savers to iOS home devices (iOS 14.0 to iOS 16.1.2)</p>
 <p align="center">
   <a href="https://connect.sidestore.ml">
