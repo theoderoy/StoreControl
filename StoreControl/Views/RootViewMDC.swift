@@ -56,7 +56,7 @@ struct RootViewMDC: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 130)
                         .clipped()
-                    Text("StoreControl")
+                    Text("StoreControl (Staging)")
                         .font(.largeTitle.weight(.bold))
                     HStack {
                         Capsule(style: .continuous)
